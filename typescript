@@ -1,0 +1,527 @@
+Script started on 2022-11-05 08:10:23+09:00 [TERM="xterm-256color" COLUMNS="80" LINES="25"]
+[?2004h]0;h_008@pop-os: ~/qmk_firmware[01;32mh_008@pop-os[00m:[01;34m~/qmk_firmware
+[34;1m> [0m[00m ,.[K[K./scripts/
+build.sh  flash.sh  
+]0;h_008@pop-os: ~/qmk_firmware[01;32mh_008@pop-os[00m:[01;34m~/qmk_firmware
+[34;1m> [0m[00m ./scripts/build.sh 
+[?2004l[34mΨ[0m[0m Compiling keymap with [36mgmake --jobs=1 planck/rev6:h008[0m
+[0m
+[0m[0m
+Making [1mplanck/rev6[0m with keymap [1mh008[0m
+
+arm-none-eabi-gcc (15:10.3-2021.07-4) 10.3.1 20210621 (release)
+Copyright (C) 2020 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Size before:
+   text	   data	    bss	    dec	    hex	filename
+      0	  53604	      0	  53604	   d164	planck_rev6_h008.bin
+
+Compiling: quantum/keymap_introspection.c                                                           [32;01m[OK][0m
+Compiling: quantum/command.c                                                                        [32;01m[OK][0m
+Linking: .build/planck_rev6_h008.elf                                                                [32;01m[OK][0m
+Creating binary load file for flashing: .build/planck_rev6_h008.bin                                 [32;01m[OK][0m
+Creating load file for flashing: .build/planck_rev6_h008.hex                                        [32;01m[OK][0m
+
+Size after:
+   text	   data	    bss	    dec	    hex	filename
+      0	  53604	      0	  53604	   d164	planck_rev6_h008.bin
+
+Copying planck_rev6_h008.bin to qmk_firmware folder                                                 [32;01m[OK][0m
+(Firmware size check does not yet support STM32F303; skipping)
+[0m[0m[0m[?2004h]0;h_008@pop-os: ~/qmk_firmware[01;32mh_008@pop-os[00m:[01;34m~/qmk_firmware
+[34;1m> [0m[00m ./sd[Kvc[K[Kcripts/f.[Klash.sh 
+[?2004l[sudo] password for h_008: 
+dfu-util 0.9
+
+Copyright 2005-2009 Weston Schmidt, Harald Welte and OpenMoko Inc.
+Copyright 2010-2016 Tormod Volden and Stefan Schmidt
+This program is Free Software and has ABSOLUTELY NO WARRANTY
+Please report bugs to http://sourceforge.net/p/dfu-util/tickets/
+
+Opening DFU capable USB device...
+ID 0483:df11
+Run-time device DFU version 011a
+Claiming USB DFU Interface...
+Setting Alternate Setting #0 ...
+Determining device status: state = dfuERROR, status = 10
+dfuERROR, clearing status
+Determining device status: state = dfuIDLE, status = 0
+dfuIDLE, continuing
+DFU mode device DFU version 011a
+Device returned transfer size 2048
+DfuSe interface name: "Internal Flash  "
+Downloading to address = 0x08000000, size = 53608
+Download	[                         ]   0%            0 bytesDownload	[                         ]   3%         2048 bytesDownload	[=                        ]   7%         4096 bytesDownload	[==                       ]  11%         6144 bytesDownload	[===                      ]  15%         8192 bytesDownload	[====                     ]  19%        10240 bytesDownload	[=====                    ]  22%        12288 bytesDownload	[======                   ]  26%        14336 bytesDownload	[=======                  ]  30%        16384 bytesDownload	[========                 ]  34%        18432 bytesDownload	[=========                ]  38%        20480 bytesDownload	[==========               ]  42%        22528 bytesDownload	[===========              ]  45%        24576 bytesDownload	[============             ]  49%        26624 bytesDownload	[=============            ]  53%        28672 bytesDownload	[==============           ]  57%        30720 bytesDownload	[===============          ]  61%        32768 bytesDownload	[================         ]  64%        34816 bytesDownload	[=================        ]  68%        36864 bytesDownload	[==================       ]  72%        38912 bytesDownload	[===================      ]  76%        40960 bytesDownload	[====================     ]  80%        43008 bytesDownload	[=====================    ]  84%        45056 bytesDownload	[======================   ]  91%        49152 bytesDownload	[=======================  ]  95%        51200 bytesDownload	[======================== ]  99%        53248 bytesDownload	[=========================] 100%        53608 bytes
+Download done.
+File downloaded successfully
+Transitioning to dfuMANIFEST state
+[?2004h]0;h_008@pop-os: ~/qmk_firmware[01;32mh_008@pop-os[00m:[01;34m~/qmk_firmware
+[34;1m> [0m[00m vim [K[K[K[K     vim keyboards/pla
+planck/   playkbtw/ 
+]0;h_008@pop-os: ~/qmk_firmware[01;32mh_008@pop-os[00m:[01;34m~/qmk_firmware
+[34;1m> [0m[00m      vim keyboards/planck/keymaps/h)[K008/
+[?2004l[?1049h[22;0;0t[22;0t[?1h=[H[2J]11;?[?2004h[>4;2m[?25h[?25l(B[m[H[2J[96m" ============================================================================(B[m[K
+[96m" Netrw Directory Listing                                        (B[0;1m[96m(netrw v171)(B[m[K
+[96m"   /home/h_008/qmk_firmware/keyboards/planck/keymaps/h008(B[m[K
+[96m"   Sorted by(B[m[93m      name(B[m[K
+[96m"   Sort sequence:(B[m[93m [\/]$(B[m[96m,(B[m[93m\<core\%(\.\d\+\)\=\>(B[m[96m,(B[m[93m\.h$(B[m[96m,(B[m[93m\.c$(B[m[96m,(B[m[93m\.cpp$(B[m[96m,(B[m[93m\~\=\*$(B[m[96m,(B[m[93m*(B[m[96m,(B[m[93m\.o$(B[m[96m,(B[m[93m\
+(B[m[96m"   Quick Help: (B[0;1m[96m<F1>(B[m[38;5;224m:(B[mhelp  (B[0;1m[96m-(B[m[38;5;224m:(B[mgo up dir  (B[0;1m[96mD(B[m[38;5;224m:(B[mdelete  (B[0;1m[96mR(B[m[38;5;224m:(B[mrename  (B[0;1m[96ms(B[m[38;5;224m:(B[msort-by  (B[0;1m[96mx(B[m[38;5;224m:(B[mspecial
+[96m" ==============================================================================
+(B[0;4m[38;5;159m..(B[0;1;4m[96m/(B[0;4m                                                                             
+(B[m[38;5;159m.(B[0;1m[96m/(B[m[K
+config.h[K
+keymap.c[K
+readme.md[K
+rules.mk[K
+[94m~[K
+~[K
+~[K
+~[K
+~[K
+~[K
+~[K
+~[K
+~[K
+~[K
+(B[0;1;7m[No Name] [RO]                                                8,1            All]112[2 q]112[2 q[16A[?25h[?25l[?1004h[?25h[?25l[25;70H(B[mj         [17A[?25h[?25l[25;70H [17A[38;5;159m..(B[0;1m[96m/(B[m[K
+(B[0;4m[38;5;159m.(B[0;1;4m[96m/(B[0;4m                                                                              [24;63H(B[0;1;7m9[15A[?25h[?25l[25;70H(B[mj[16A[?25h[?25l[25;70H [16A[38;5;159m.(B[0;1m[96m/(B[m[K
+(B[0;4mconfig.h                                                                        [24;63H(B[0;1;7m10,1[14A[?25h[?25l[25;70H(B[mj[15A[?25h[?25l[25;70H [15Aconfig.h[K
+(B[0;4mkeymap.c                                                                        [24;64H(B[0;1;7m1[13A[?25h[?25l[H(B[m[93m  1 (B[m#include QMK_KEYBOARD_H[51X
+[93m  2 (B[m[73X
+[93m  3 (B[m[54X
+[93m  4 (B[m[38;5;81m#define _LAYER0 (B[m[95m0(B[m  
+[93m  5 (B[m[38;5;81m#define _LAYER1 (B[m[95m1(B[m[K
+[93m  6 (B[m[38;5;81m#define _LAYER2 (B[m[95m2(B[m[K
+[93m  7 (B[m[38;5;81m#define _LAYER3 (B[m[95m3(B[m[K
+[93m  8 (B[m[38;5;81m#define _LAYER4 (B[m[95m4
+(B[m[93m  9 (B[m[38;5;81m#define _LAYER5 (B[m[95m5
+(B[m[93m 10 (B[m[38;5;81m#define _LAYER6 (B[m[95m6
+(B[m[93m 11 (B[m[K
+[93m 12 (B[m[38;5;121menum(B[m custom_keycodes {
+[93m 13 (B[m    LAYER0 = SAFE_RANGE,
+[93m 14 (B[m    LAYER1,[K
+[93m 15 (B[m    LAYER2,[K
+[93m 16 (B[m    LAYER3,[K
+[93m 17 (B[m    LAYER4,[K
+[93m 18 (B[m    LAYER5,[K
+[93m 19 (B[m    LAYER6,[K
+[93m 20 (B[m};[K
+[93m 21 (B[m[K
+[93m 22 (B[m [38;5;121mconst(B[m [38;5;121muint16_t(B[m PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {[K
+[93m 23 (B[m[K
+(B[0;1;7m~/qmk_firmware/keyboards/planck/keymaps/h008/keymap.c[10C,1            Top]112[2 q[1;5H[?25h[?25l[25;70H(B[mh[1;5H[?25h[?25l[25;70H [1;5H[?25h[?25l[25;70Hh[1;5H[?25h[?25l[25;70H [1;5H[?25h[?25l[25;70Hj[1;5H[?25h[?25l[25;70H [24;63H(B[0;1;7m2,0-1[2;5H[?25h[?25l[25;70H(B[mj[2;5H[?25h[?25l[25;70H [24;63H(B[0;1;7m3[3;5H[?25h[?25l[25;70H(B[mj[3;5H[?25h[?25l[25;70H [24;63H(B[0;1;7m4,1  [4;5H[?25h[?25l[25;70H(B[mj[4;5H[?25h[?25l[25;70H [24;63H(B[0;1;7m5[5;5H[?25h[?25l[25;70H(B[mj[5;5H[?25h[?25l[25;70H [24;63H(B[0;1;7m6[6;5H[?25h[?25l[25;70H(B[mj[6;5H[?25h[?25l[25;70H [24;63H(B[0;1;7m7[7;5H[?25h[?25l[25;70H(B[mj[7;5H[?25h[?25l[25;70H [24;63H(B[0;1;7m8[8;5H[?25h[?25l[25;70H(B[mj[8;5H[?25h[?25l[25;70H [24;63H(B[0;1;7m9[9;5H[?25h[?25l[25;70H(B[mj[9;5H[?25h[?25l[25;70H [24;63H(B[0;1;7m10,1[10;5H[?25h[?25l[25;70H(B[mj[10;5H[?25h[?25l[25;70H [24;64H(B[0;1;7m1,0-1[11;5H[?25h[?25l[25;70H(B[mj[11;5H[?25h[?25l[25;70H [24;64H(B[0;1;7m2,1  [12;5H[?25h[?25l[25;70H(B[mj[12;5H[?25h[?25l[25;70H [24;64H(B[0;1;7m3[13;5H[?25h[?25l[25;70H(B[mj[13;5H[?25h[?25l[25;70H [24;64H(B[0;1;7m4[14;5H[?25h[?25l[25;70H(B[mj[14;5H[?25h[?25l[25;70H [24;64H(B[0;1;7m5[15;5H[?25h[?25l[25;70H(B[mj[15;5H[?25h[?25l[25;70H [24;64H(B[0;1;7m6[16;5H[?25h[?25l[25;70H(B[mj[16;5H[?25h[?25l[25;70H [24;64H(B[0;1;7m7[17;5H[?25h[?25l[25;70H(B[mj[17;5H[?25h[?25l[25;70H [24;64H(B[0;1;7m8[18;5H[?25h[?25l[25;70H(B[mj[18;5H[?25h[?25l[25;70H [24;64H(B[0;1;7m9[19;5H[?25h[?25l[25;70H(B[mj[19;5H[?25h[?25l[25;70H [12;26H[46m{[20;5H}[24;63H(B[0;1;7m20[20;5H[?25h[?25l[25;70H(B[mj[20;5H[?25h[?25l[25;70H [12;26H{[20;5H}[24;64H(B[0;1;7m1,0-1[21;5H[?25h[?25l[25;70H(B[mj[21;5H[?25h[?25l[25;70H [24;64H(B[0;1;7m2,1  [22;5H[?25h[?25l[25;70H(B[mj[22;5H[?25h[?25l[25;70H [24;64H(B[0;1;7m3,0-1[23;5H[?25h[?25l[25;70H(B[mj[23;5H[?25h[?25l[25;70H [1;23r[H[M[r[23;1H[93m 24 (B[m [_LAYER0] = LAYOUT([K[24;64H(B[0;1;7m4,1            2%[23;5H[?25h[?25l[25;70H(B[mj[23;5H[?25h[?25l[25;70H [1;23r[H[2M[r[22;1H[93m 25 (B[m  KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSP[93m    (B[mC,[K[24;64H(B[0;1;7m5,1            8[22;5H[?25h[?25l[25;70H(B[mj[22;5H[?25h[?25l[25;70H [1;23r[H[2M[r[22;1H[93m 26 (B[m  KC_LCTL, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC[93m    (B[m_QUOT,[K[24;64H(B[0;1;7m6,1           13[22;5H[?25h[?25l[25;70H(B[mj[22;5H[?25h[?25l[25;70H [1;23r[H[2M[r[22;1H[93m 27 (B[m  KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLS[93m    (B[mH, KC_RSFT,[K[24;64H(B[0;1;7m7,1           18[22;5H[?25h[?25l[25;70H(B[mj[22;5H[?25h[?25l[25;70H [1;23r[H[2M[r[22;1H[93m 28 (B[m  KC_INT5, KC_INT4, KC_LALT, KC_LGUI, MO([95m1(B[m), CTL_T(KC_SPC), SFT_T(KC_SPC), M[93m    (B[mO([95m2(B[m), KC_ENT, KC_RALT, KC_APP, KC_RCTL[K[24;64H(B[0;1;7m8,1           23[22;5H[?25h[?25l[25;70H(B[mj[22;5H[?25h[?25l[25;70H [1;23r[H[M[r[23;1H[93m 29 (B[m  ),[K[24;64H(B[0;1;7m9,1           25[23;5H[?25h[?25l[25;70H(B[mj[23;5H[?25h[?25l[25;70H [1;23r[H[M[r[23;1H[93m 30 (B[m[K[24;63H(B[0;1;7m30,0-1         28[23;5H[?25h[?25l[25;70H(B[mj[23;5H[?25h[?25l[25;70H [1;23r[H[M[r[23;1H[93m 31 (B[m[46m[(B[m_LAYER1[46m](B[m = LAYOUT([K[24;64H(B[0;1;7m1,1           30[23;5H[?25h[?25l[25;70H(B[mj[23;5H[?25h[?25l[25;70H [1;23r[H[2M[r[21;5H[_LAYER1]
+[93m 32 (B[m  KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_DEL[93m    (B[m,[K[24;64H(B[0;1;7m2,1           35[22;5H[?25h[?25l[25;70H(B[mj[22;5H[?25h[?25l[25;70H [1;23r[H[2M[r[22;1H[93m 33 (B[m  KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_LEFT, KC_DOWN, KC_UP, KC_RG[93m    (B[mHT, KC_NO, KC_ENT,  [K[24;64H(B[0;1;7m3,1           39[22;5H[?25h[?25l[25;70H(B[mk[22;5H[?25h[?25l[25;70H [24;64H(B[0;1;7m2[20;5H[?25h[?25l[25;70H(B[mk[20;5H[?25h[?25l[25;70H [19;5H[46m[(B[m_LAYER1[46m]
+
+(B[m[93m [24;64H(B[0;1;7m1[19;5H[?25h[?25l[25;70H(B[mk[19;5H[?25h[?25l[25;70H [19;5H[_LAYER1]
+
+[93m [24;64H(B[0;1;7m0,0-1[18;5H[?25h[?25l[25;70H(B[mj[18;5H[?25h[?25l[25;70H [19;5H[46m[(B[m_LAYER1[46m]
+
+(B[m[93m [24;64H(B[0;1;7m1,1  [19;5H[?25h[?25l[25;70H(B[mj[19;5H[?25h[?25l[25;70H [19;5H[_LAYER1]
+
+[93m [24;64H(B[0;1;7m2[20;5H[?25h[?25l[25;70H(B[mj[20;5H[?25h[?25l[25;70H [24;64H(B[0;1;7m3[22;5H[?25h[?25l[25;70H(B[mj[22;5H[?25h[?25l[25;70H [1;23r[H[2M[r[22;1H[93m 34 (B[m  KC_TRNS, KC_F6, KC_F7, KC_TRNS, KC_F9, KC_F10, KC_HOME, KC_PGDN, KC_PGUP, [93m    (B[mKC_END, KC_F11, KC_F12,[K[24;64H(B[0;1;7m4,1           42[22;5H[?25h[?25l[25;70H(B[mj[22;5H[?25h[?25l[25;70H [1;23r[H[2M[r[22;1H[93m 35 (B[m  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, MO([95m3(B[m), KC_ENT, KC_TRNS, KC_TRNS, KC_TR[93m    (B[mNS, KC_TRNS, KC_TRNS, KC_TRNS[K[24;64H(B[0;1;7m5,1           46[22;5H[?25h[?25l[25;70H(B[mk[22;5H[?25h[?25l[25;70H [24;64H(B[0;1;7m4[20;5H[?25h[?25l[25;70H(B[mk[20;5H[?25h[?25l[25;70H [24;64H(B[0;1;7m3[18;5H[?25h[?25l[25;70H(B[mk[18;5H[?25h[?25l[25;70H [24;64H(B[0;1;7m2[16;5H[?25h[?25l[25;70H(B[ml[16;5H[?25h[?25l[25;70H [24;66H(B[0;1;7m2[16;6H[?25h[?25l[25;70H(B[mj[16;6H[?25h[?25l[25;70H [24;64H(B[0;1;7m3[18;6H[?25h[?25l[25;70H(B[mj[18;6H[?25h[?25l[25;70H [24;64H(B[0;1;7m4[20;6H[?25h[?25l[25;70H(B[ml[20;6H[?25h[?25l[25;70H [24;66H(B[0;1;7m3[20;7H[?25h[?25l[25;70H(B[mk[20;7H[?25h[?25l[25;70H [24;64H(B[0;1;7m3[18;7H[?25h[?25l[25;70H(B[ml[18;7H[?25h[?25l[25;70H [24;66H(B[0;1;7m4[18;8H[?25h[?25l[25;70H(B[ml[18;8H[?25h[?25l[25;70H [24;66H(B[0;1;7m5[18;9H[?25h[?25l[25;70H(B[ml[18;9H[?25h[?25l[25;70H [24;66H(B[0;1;7m6[18;10H[?25h[?25l[25;70H(B[ml[18;10H[?25h[?25l[25;70H [24;66H(B[0;1;7m7[18;11H[?25h[?25l[25;70H(B[ml[18;11H[?25h[?25l[25;70H [24;66H(B[0;1;7m8[18;12H[?25h[?25l[25;70H(B[ml[18;12H[?25h[?25l[25;70H [24;66H(B[0;1;7m9[18;13H[?25h[?25l[25;70H(B[ml[18;13H[?25h[?25l[25;70H [24;66H(B[0;1;7m10[18;14H[?25h[?25l[25;70H(B[ml[18;14H[?25h[?25l[25;70H [24;67H(B[0;1;7m1[18;15H[?25h[?25l[25;70H(B[ml[18;15H[?25h[?25l[25;70H [24;67H(B[0;1;7m2[18;16H[?25h[?25l[25;70H(B[ml[18;16H[?25h[?25l[25;70H [24;67H(B[0;1;7m3[18;17H[?25h[?25l[25;70H(B[ml[18;17H[?25h[?25l[25;70H [24;67H(B[0;1;7m4[18;18H[?25h[?25l[25;70H(B[ml[18;18H[?25h[?25l[25;70H [24;67H(B[0;1;7m5[18;19H[?25h[?25l[25;70H(B[ml[18;19H[?25h[?25l[25;70H [24;67H(B[0;1;7m6[18;20H[?25h[?25l[25;70H(B[ml[18;20H[?25h[?25l[25;70H [24;67H(B[0;1;7m7[18;21H[?25h[?25l[25;70H(B[ml[18;21H[?25h[?25l[25;70H [24;67H(B[0;1;7m8[18;22H[?25h[?25l[25;70H(B[ml[18;22H[?25h[?25l[25;70H [24;67H(B[0;1;7m9[18;23H[?25h[?25l[25;70H(B[mj[18;23H[?25h[?25l[25;70H [24;64H(B[0;1;7m4[20;23H[?25h[?25l[25;70H(B[mj[20;23H[?25h[?25l[25;70H [24;64H(B[0;1;7m5[22;23H[?25h[?25l[25;70H(B[ml[22;23H[?25h[?25l[25;70H [24;66H(B[0;1;7m20[22;24H[?25h[?25l[25;70H(B[ml[22;24H[?25h[?25l[25;70H [24;67H(B[0;1;7m1[22;25H[?25h[?25l[25;70H(B[ml[22;25H[?25h[?25l[25;70H [24;67H(B[0;1;7m2[22;26H[?25h[?25l[25;70H(B[ml[22;26H[?25h[?25l[25;70H [24;67H(B[0;1;7m3[22;27H[?25h[?25l[25;70H(B[ml[22;27H[?25h[?25l[25;70H [24;67H(B[0;1;7m4[22;28H[?25h[?25l[25;70H(B[ml[22;28H[?25h[?25l[25;70H [24;67H(B[0;1;7m5[22;29H[?25h[?25l[25;70H(B[ml[22;29H[?25h[?25l[25;70H [24;67H(B[0;1;7m6[22;30H[?25h[?25l[25;70H(B[ml[22;30H[?25h[?25l[25;70H [24;67H(B[0;1;7m7[22;31H[?25h[?25l[25;70H(B[ml[22;31H[?25h[?25l[25;70H [24;67H(B[0;1;7m8[22;32H[?25h[?25l[25;70H(B[ml[22;32H[?25h[?25l[25;70H [24;67H(B[0;1;7m9[22;33H[?25h[?25l[25;70H(B[ml[22;33H[?25h[?25l[25;70H [24;66H(B[0;1;7m30[22;34H[?25h[?25l[25;70H(B[ml[22;34H[?25h[?25l[25;70H [24;67H(B[0;1;7m1[22;35H[?25h[?25l[25;70H(B[ml[22;35H[?25h[?25l[25;70H [24;67H(B[0;1;7m2[22;36H[?25h[?25l[25;70H(B[ml[22;36H[?25h[?25l[25;70H [24;67H(B[0;1;7m3[22;37H[?25h[?25l[25;70H(B[ml[22;37H[?25h[?25l[25;70H [24;67H(B[0;1;7m4[22;38H[?25h[?25l[25;70H(B[ml[22;38H[?25h[?25l[25;70H [24;67H(B[0;1;7m5[22;39H[?25h[?25l[25;70H(B[ml[22;39H[?25h[?25l[25;70H [24;67H(B[0;1;7m6[22;40H[?25h[?25l[25;70H(B[ml[22;40H[?25h[?25l[25;70H [24;67H(B[0;1;7m7[22;41H[?25h[?25l[25;70H(B[ml[22;41H[?25h[?25l[25;70H [24;67H(B[0;1;7m8[22;42H[?25h[?25l[25;70H(B[ml[22;42H[?25h[?25l[25;70H [24;67H(B[0;1;7m9[22;43H[?25h[?25l[25;70H(B[ml[22;43H[?25h[?25l[25;70H [24;66H(B[0;1;7m40[22;44H[?25h[?25l[25;70H(B[ml[22;44H[?25h[?25l[25;70H [22;45H[46m((B[m[95m3(B[m[46m)[32C(B[mR[93m [24;67H(B[0;1;7m1[22;45H[?25h[?25l[25;70H(B[ml[22;45H[?25h[?25l[25;70H [22;45H([95m3(B[m)[32CR[93m [24;67H(B[0;1;7m2[22;46H[?25h[?25l[25;70H(B[ml[22;46H[?25h[?25l[25;70H [22;45H[46m((B[m[95m3(B[m[46m)[32C(B[mR[93m [24;67H(B[0;1;7m3[22;47H[?25h[?25l[25;70H(B[ml[22;47H[?25h[?25l[25;70H [22;45H([95m3(B[m)[32CR[93m [24;67H(B[0;1;7m4[22;48H[?25h[?25l[25;70H(B[ml[22;48H[?25h[?25l[25;70H [24;67H(B[0;1;7m5[22;49H[?25h[?25l[25;70H(B[ml[22;49H[?25h[?25l[25;70H [24;67H(B[0;1;7m6[22;50H[?25h[?25l[25;70H(B[md[22;50H[?25h[?25l]112[4 q[?25h[?25l[25;71Hf[22;50H[?25h[?25l[25;72H,[22;50H[?25h[?25l[25;70H   [22;50H KC_TRNS, KC_TRNS, KC_TRNS, KC_[93m    (B[mTRNS, KC_TRNS, KC_TRNS[7X[24;55H(B[0;1;7m[+]]112[2 q[22;50H[?25h[?25l[25;70H(B[ml[22;50H[?25h[?25l[25;70H [24;67H(B[0;1;7m7[22;51H[?25h[?25l[25;70H(B[ml[22;51H[?25h[?25l[25;70H [24;67H(B[0;1;7m8[22;52H[?25h[?25l[25;70H(B[ml[22;52H[?25h[?25l[25;70H [24;67H(B[0;1;7m9[22;53H[?25h[?25l[25;70H(B[ml[22;53H[?25h[?25l[25;70H [24;66H(B[0;1;7m50[22;54H[?25h[?25l[25;70H(B[ml[22;54H[?25h[?25l[25;70H [24;67H(B[0;1;7m1[22;55H[?25h[?25l[25;70H(B[ml[22;55H[?25h[?25l[25;70H [24;67H(B[0;1;7m2[22;56H[?25h[?25l[25;70H(B[ml[22;56H[?25h[?25l[25;70H [24;67H(B[0;1;7m3[22;57H[?25h[?25l[25;70H(B[ml[22;57H[?25h[?25l[25;70H [24;67H(B[0;1;7m4[22;58H[?25h[?25l[25;70H(B[mp[22;58H[?25h[?25l[25;70H [22;59HKC_ENT, KC_TRNS, KC_TR[93m    (B[mNS, KC_TRNS, KC_TRNS, KC_TRNS[24;66H(B[0;1;7m61[22;65H[?25h[?25l[25;70H(B[mh[22;65H[?25h[?25l[25;70H [24;67H(B[0;1;7m0[22;64H[?25h[?25l[25;70H(B[mh[22;64H[?25h[?25l[25;70H [24;66H(B[0;1;7m59[22;63H[?25h[?25l[25;70H(B[mh[22;63H[?25h[?25l[25;70H [24;67H(B[0;1;7m8[22;62H[?25h[?25l[25;70H(B[mh[22;62H[?25h[?25l[25;70H [24;67H(B[0;1;7m7[22;61H[?25h[?25l[25;70H(B[mh[22;61H[?25h[?25l[25;70H [24;67H(B[0;1;7m6[22;60H[?25h[?25l[25;70H(B[mh[22;60H[?25h[?25l[25;70H [24;67H(B[0;1;7m5[22;59H[?25h[?25l[25;70H(B[mi[22;59H[?25h[?25l[25;70H ]112[6 q[22;59H[?25h[?25l
+
+
+(B[0;1m-- INSERT --(B[m[K[?25h[?25l[22;59H[?25h[?25l KC_ENT, KC_TRNS, KC_T[93m    (B[mRNS, KC_TRNS, KC_TRNS, KC_TRNS[24;67H(B[0;1;7m6[22;60H[?25h[?25l(B[m KC_ENT, KC_TRNS, KC_[93m    (B[mTRNS, KC_TRNS, KC_TRNS, KC_TRNS[24;67H(B[0;1;7m7[22;61H[?25h[?25l(B[mKC_ENT, KC_TRNS, KC_T[93m    (B[mRNS, KC_TRNS, KC_TRNS, KC_TRNS [24;67H(B[0;1;7m6[22;60H[?25h[?25l(B[m
+
+
+[12X[24;67H(B[0;1;7m5]112[2 q[22;59H[?25h[?25l[25;70H(B[mh[22;59H[?25h[?25l[25;70H [24;67H(B[0;1;7m4[22;58H[?25h[?25l[25;70H(B[mh[22;58H[?25h[?25l[25;70H [24;67H(B[0;1;7m3[22;57H[?25h[?25l[25;70H(B[mh[22;57H[?25h[?25l[25;70H [24;67H(B[0;1;7m2[22;56H[?25h[?25l[25;70H(B[mh[22;56H[?25h[?25l[25;70H [24;67H(B[0;1;7m1[22;55H[?25h[?25l[25;70H(B[mh[22;55H[?25h[?25l[25;70H [24;67H(B[0;1;7m0[22;54H[?25h[?25l[25;70H(B[mh[22;54H[?25h[?25l[25;70H [24;66H(B[0;1;7m49[22;53H[?25h[?25l[25;70H(B[mh[22;53H[?25h[?25l[25;70H [24;67H(B[0;1;7m8[22;52H[?25h[?25l[25;70H(B[mh[22;52H[?25h[?25l[25;70H [24;67H(B[0;1;7m7[22;51H[?25h[?25l[25;70H(B[mh[22;51H[?25h[?25l[25;70H [24;67H(B[0;1;7m6[22;50H[?25h[?25l[25;70H(B[mc[22;50H[?25h[?25l]112[4 q[?25h[?25l[25;71H^I[22;50H[?25h[?25l[25;70H   ]112[2 q[22;50H[?25h[?25l[25;70Hx[22;50H[?25h[?25l[25;70H ]112[4 q[22;50H[?25h[?25l[25;70Hdl[22;50H[?25h[?25l[25;70H  [22;50HKC_TRNS, KC_ENT, KC_TRNS, KC_TR[93m    (B[mNS, KC_TRNS, KC_TRNS, KC_TRNS ]112[2 q[22;50H[?25h[?25l[25;70Hj[22;50H[?25h[?25l[25;70H [1;23r[H[M[r[23;1H[93m 36 (B[m  ),[K[24;64H(B[0;1;7m6,4           48[23;8H[?25h[?25l[25;70H(B[mj[23;8H[?25h[?25l[25;70H [1;23r[H[M[r[23;1H[93m 37 (B[m[K[24;64H(B[0;1;7m7,0-1         51[23;5H[?25h[?25l[25;70H(B[mj[23;5H[?25h[?25l[25;70H [1;23r[H[M[r[23;1H[93m 38 (B[m[_LAYER2] = LAYOUT([K[24;64H(B[0;1;7m8,19          53[23;23H[?25h[?25l[25;70H(B[mj[23;23H[?25h[?25l[25;70H [1;23r[H[3M[r[21;1H[93m 39 (B[m  KC_ESC, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_AST[93m    (B[mR, KC_LPRN, KC_RPRN, KC_DEL,[K
+[93m 40 (B[m  KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_GRV, KC_MINS, KC_EQL, KC_LB[23;78H[94m@@@[24;64H(B[0;1;7m9,46          56[21;50H[?25h[?25l[25;70H(B[mj[21;50H[?25h[?25l[25;70H [1;23r[H[2M[r[21;78H_LB[93m    (B[mRC, KC_RBRC, KC_BSLS,[K
+[93m 41 (B[m  KC_TRNS, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_TILD, KC_UNDS, KC_PLUS, KC[23;78H[94m@@@[24;63H(B[0;1;7m40,46          59[21;50H[?25h[?25l[25;70H(B[mj[21;50H[?25h[?25l[25;70H [1;23r[H[2M[r[21;78H KC[93m    (B[m_LCBR, KC_RCBR, KC_PIPE,[K
+[93m 42 (B[m  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS , KC_ENT, MO([95m3(B[m), KC_T[23;78H[94m@@@[24;64H(B[0;1;7m1,46          61[21;50H[?25h[?25l[25;70H(B[mj[21;50H[?25h[?25l[25;70H [1;23r[H[2M[r[21;78HC_T[93m    (B[mRNS, KC_TRNS, KC_TRNS, KC_TRNS[K
+[93m 43 (B[m  ),[K[24;64H(B[0;1;7m2,46          65[21;50H[?25h[?25l[25;70H(B[mj[21;50H[?25h[?25l[25;70H [24;64H(B[0;1;7m3,4 [23;8H[?25h[?25l[25;70H(B[mk[23;8H[?25h[?25l[25;70H [24;64H(B[0;1;7m2,46[21;50H[?25h[?25l[25;70H(B[ml[21;50H[?25h[?25l[25;70H [24;67H(B[0;1;7m7[21;51H[?25h[?25l[25;70H(B[ml[21;51H[?25h[?25l[25;70H [24;67H(B[0;1;7m8[21;52H[?25h[?25l[25;70H(B[mh[21;52H[?25h[?25l[25;70H [24;67H(B[0;1;7m7[21;51H[?25h[?25l[25;70H(B[md[21;51H[?25h[?25l]112[4 q[?25h[?25l[25;71Ht[21;51H[?25h[?25l[25;72H,[21;51H[?25h[?25l[25;70H   [21;51H, KC_ENT, MO([95m3(B[m), KC_TRNS[5CT[93m    (B[mRNS, KC_TRNS, KC_TRNS[9X]112[2 q[21;51H[?25h[?25l[25;70Hl[21;51H[?25h[?25l[25;70H [24;67H(B[0;1;7m8[21;52H[?25h[?25l[25;70H(B[ml[21;52H[?25h[?25l[25;70H [24;67H(B[0;1;7m9[21;53H[?25h[?25l[25;70H(B[ml[21;53H[?25h[?25l[25;70H [24;66H(B[0;1;7m50[21;54H[?25h[?25l[25;70H(B[ml[21;54H[?25h[?25l[25;70H [24;67H(B[0;1;7m1[21;55H[?25h[?25l[25;70H(B[ml[21;55H[?25h[?25l[25;70H [24;67H(B[0;1;7m2[21;56H[?25h[?25l[25;70H(B[ml[21;56H[?25h[?25l[25;70H [24;67H(B[0;1;7m3[21;57H[?25h[?25l[25;70H(B[ml[21;57H[?25h[?25l[25;70H [24;67H(B[0;1;7m4[21;58H[?25h[?25l[25;70H(B[ml[21;58H[?25h[?25l[25;70H [24;67H(B[0;1;7m5[21;59H[?25h[?25l[25;70H(B[ml[21;59H[?25h[?25l[25;70H [24;67H(B[0;1;7m6[21;60H[?25h[?25l[25;70H(B[mp[21;60H[?25h[?25l[25;70H [21;61H KC_TRNS MO([95m3(B[m)[5CT[93m    (B[mRNS, KC_TRNS, KC_TRNS, KC_TRNS[24;66H(B[0;1;7m65[21;69H[?25h[?25l[25;70H(B[ma[21;69H[?25h[?25l[25;70H ]112[6 q[21;69H[?25h[?25l
+
+
+
+(B[0;1m-- INSERT --[?25h[?25l[24;67H(B[0;1;7m6[21;70H[?25h[?25l(B[m,MO([95m3(B[m), KC_[93m    (B[mTRNS, KC_TRNS, KC_TRNS, KC_TRNS[24;67H(B[0;1;7m7[21;71H[?25h[?25l(B[m      MO([95m3(B[m[93m    (B[m), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS[24;67H(B[0;1;7m8-73[21;77H[?25h[?25l[6D(B[mMO([95m3(B[m), KC_[93m    (B[mTRNS, KC_TRNS, KC_TRNS, KC_TRNS[6X[24;67H(B[0;1;7m7   [3A[?25h[?25l(B[mhMO([95m3(B[m), KC[93m    (B[m_TRNS, KC_TRNS, KC_TRNS, KC_TRNS[24;67H(B[0;1;7m8[21;72H[?25h[?25l(B[mMO([95m3(B[m), KC_[93m    (B[mTRNS, KC_TRNS, KC_TRNS, KC_TRNS [24;67H(B[0;1;7m7[21;71H[?25h[?25l(B[m      MO([95m3(B[m[93m    (B[m), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS[24;67H(B[0;1;7m8-73[21;77H[?25h[?25l[6D(B[mMO([95m3(B[m), KC_[93m    (B[mTRNS, KC_TRNS, KC_TRNS, KC_TRNS[6X[24;67H(B[0;1;7m7   [3A[?25h[?25l(B[m
+
+
+
+[12X[24;67H(B[0;1;7m6]112[2 q[21;70H[?25h[?25l
+
+
+
+(B[mi[21;70H[?25h[?25l
+
+
+
+ ]112[6 q[21;70H[?25h[?25l
+
+
+
+(B[0;1m-- INSERT --[?25h[?25l[21;70H[?25h[?25l[24;67H(B[0;1;7m7[21;71H[?25h[?25l(B[m MO([95m3(B[m), KC[93m    (B[m_TRNS, KC_TRNS, KC_TRNS, KC_TRNS[24;67H(B[0;1;7m8[21;72H[?25h[?25l[24;67H7[21;71H[?25h[?25l[24;67H6[21;70H[?25h[?25l(B[m, MO([95m3(B[m), KC_[93m    (B[mTRNS, KC_TRNS, KC_TRNS, KC_TRNS [24;67H(B[0;1;7m5[21;69H[?25h[?25l[24;67H4[3A[?25h[?25l[24;67H3[21;67H[?25h[?25l
+
+
+2[21;66H[?25h[?25l[24;67H1[21;65H[?25h[?25l[24;67H0[21;64H[?25h[?25l[24;66H59[21;63H[?25h[?25l[24;67H8[21;62H[?25h[?25l[24;67H7[21;61H[?25h[?25l[24;67H6[21;60H[?25h[?25l[24;67H5[21;59H[?25h[?25l[24;67H4[21;58H[?25h[?25l[24;67H3[21;57H[?25h[?25l[24;67H2[21;56H[?25h[?25l[24;67H1[21;55H[?25h[?25l[24;67H0[21;54H[?25h[?25l[24;66H49[21;53H[?25h[?25l[24;67H8[21;52H[?25h[?25l[24;67H7[21;51H[?25h[?25l(B[m KC_ENT,  KC_TRNS, MO([95m3(B[m), KC_T[93m    (B[mRNS, KC_TRNS, KC_TRNS, KC_TRNS [24;67H(B[0;1;7m6[21;50H[?25h[?25l(B[m
+
+
+
+[12X[24;67H(B[0;1;7m5]112[2 q[21;49H[?25h[?25l[25;70H(B[m:[21;49H[?25h[?25l[25;70H [25;1H:]112[2 q[?25h[?25lw[?25h[?25lq[?25h[?25l[25;1H[?25h[?25l"~/qmk_firmware/keyboards/planck/keymaps/h008/keymap.c"]112[2 q[?25h[?25l[25;1H<firmware/keyboards/planck/keymaps/h008/keymap.c" 58L, 3143B written[25;1H[?25h[?25l]112[2 q(B[m[?25h[?1l>[?1049l[23;0;0t[23;0t[?2004l[?1004l[>4;0m[?25h[?2004h]0;h_008@pop-os: ~/qmk_firmware[01;32mh_008@pop-os[00m:[01;34m~/qmk_firmware
+[34;1m> [0m[00m k[K./scripts/flash.sh build[C[C[C[C
+[?2004l[34mΨ[0m[0m Compiling keymap with [36mgmake --jobs=1 planck/rev6:h008[0m
+[0m
+[0m[0m
+Making [1mplanck/rev6[0m with keymap [1mh008[0m
+
+arm-none-eabi-gcc (15:10.3-2021.07-4) 10.3.1 20210621 (release)
+Copyright (C) 2020 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Size before:
+   text	   data	    bss	    dec	    hex	filename
+      0	  53604	      0	  53604	   d164	planck_rev6_h008.bin
+
+Compiling: quantum/keymap_introspection.c                                                           [32;01m[OK][0m
+Compiling: quantum/command.c                                                                        [32;01m[OK][0m
+Linking: .build/planck_rev6_h008.elf                                                                [32;01m[OK][0m
+Creating binary load file for flashing: .build/planck_rev6_h008.bin                                 [32;01m[OK][0m
+Creating load file for flashing: .build/planck_rev6_h008.hex                                        [32;01m[OK][0m
+
+Size after:
+   text	   data	    bss	    dec	    hex	filename
+      0	  53604	      0	  53604	   d164	planck_rev6_h008.bin
+
+Copying planck_rev6_h008.bin to qmk_firmware folder                                                 [32;01m[OK][0m
+(Firmware size check does not yet support STM32F303; skipping)
+[0m[0m[0m[?2004h]0;h_008@pop-os: ~/qmk_firmware[01;32mh_008@pop-os[00m:[01;34m~/qmk_firmware
+[34;1m> [0m[00m ./scripts/build.sh flash[C[C[C[C
+[?2004ldfu-util 0.9
+
+Copyright 2005-2009 Weston Schmidt, Harald Welte and OpenMoko Inc.
+Copyright 2010-2016 Tormod Volden and Stefan Schmidt
+This program is Free Software and has ABSOLUTELY NO WARRANTY
+Please report bugs to http://sourceforge.net/p/dfu-util/tickets/
+
+Opening DFU capable USB device...
+ID 0483:df11
+Run-time device DFU version 011a
+Claiming USB DFU Interface...
+Setting Alternate Setting #0 ...
+Determining device status: state = dfuERROR, status = 10
+dfuERROR, clearing status
+Determining device status: state = dfuIDLE, status = 0
+dfuIDLE, continuing
+DFU mode device DFU version 011a
+Device returned transfer size 2048
+DfuSe interface name: "Internal Flash  "
+Downloading to address = 0x08000000, size = 53608
+Download	[                         ]   0%            0 bytesDownload	[=                        ]   7%         4096 bytesDownload	[==                       ]  11%         6144 bytesDownload	[===                      ]  15%         8192 bytesDownload	[====                     ]  19%        10240 bytesDownload	[=====                    ]  22%        12288 bytesDownload	[======                   ]  26%        14336 bytesDownload	[=======                  ]  30%        16384 bytesDownload	[========                 ]  34%        18432 bytesDownload	[=========                ]  38%        20480 bytesDownload	[==========               ]  42%        22528 bytesDownload	[===========              ]  45%        24576 bytesDownload	[============             ]  49%        26624 bytesDownload	[=============            ]  53%        28672 bytesDownload	[==============           ]  57%        30720 bytesDownload	[===============          ]  61%        32768 bytesDownload	[================         ]  64%        34816 bytesDownload	[=================        ]  68%        36864 bytesDownload	[==================       ]  72%        38912 bytesDownload	[===================      ]  76%        40960 bytesDownload	[====================     ]  80%        43008 bytesDownload	[=====================    ]  84%        45056 bytesDownload	[======================   ]  91%        49152 bytesDownload	[=======================  ]  95%        51200 bytesDownload	[======================== ]  99%        53248 bytesDownload	[=========================] 100%        53608 bytes
+Download done.
+File downloaded successfully
+Transitioning to dfuMANIFEST state
+[?2004h]0;h_008@pop-os: ~/qmk_firmware[01;32mh_008@pop-os[00m:[01;34m~/qmk_firmware
+[34;1m> [0m[00m w[K[K[34;1m> [0m[00m ./scripts/flash.sh build[C[C[C[Cflash[C[C[C[Cbuild[C[C[C[C[C[C[Cexit[Kいんらいんニュウニョクはまだできないｑ’’[C[C[Cls[Kいんらいんニュウニョクはまだできないｑ’’[C[C[Cexit[K./scripts/build.sh flash[C[C[C[Cbuild[C[C[C[Cflash[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kvim  keyboards/planvk[K[Kck/keymaps/h008/keymap.c 
+[?2004l[?1049h[22;0;0t[22;0t[?1h=[H[2J]11;?[?2004h[>4;2m[?25h[?25l(B[m[H[2J[93m  1 (B[m#include QMK_KEYBOARD_H[K
+[93m  2 (B[m[K
+[93m  3 (B[m[K
+[93m  4 (B[m[38;5;81m#define _LAYER0 (B[m[95m0(B[m[K
+[93m  5 (B[m[38;5;81m#define _LAYER1 (B[m[95m1(B[m[K
+[93m  6 (B[m[38;5;81m#define _LAYER2 (B[m[95m2(B[m[K
+[93m  7 (B[m[38;5;81m#define _LAYER3 (B[m[95m3(B[m[K
+[93m  8 (B[m[38;5;81m#define _LAYER4 (B[m[95m4(B[m[K
+[93m  9 (B[m[38;5;81m#define _LAYER5 (B[m[95m5(B[m[K
+[93m 10 (B[m[38;5;81m#define _LAYER6 (B[m[95m6(B[m[K
+[93m 11 (B[m[K
+[93m 12 (B[m[38;5;121menum(B[m custom_keycodes {[K
+[93m 13 (B[m    LAYER0 = SAFE_RANGE,[K
+[93m 14 (B[m    LAYER1,[K
+[93m 15 (B[m    LAYER2,[K
+[93m 16 (B[m    LAYER3,[K
+[93m 17 (B[m    LAYER4,[K
+[93m 18 (B[m    LAYER5,[K
+[93m 19 (B[m    LAYER6,[K
+[93m 20 (B[m};[K
+[93m 21 (B[m[K
+[93m 22 (B[m [38;5;121mconst(B[m [38;5;121muint16_t(B[m PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {[K
+[93m 23 (B[m[K
+[93m 24 (B[m [_LAYER0] = LAYOUT([K
+[93m 25 (B[m  KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSPC,[K
+[93m 26 (B[m  KC_LCTL, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT,[K
+[93m 27 (B[m  KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,[K
+[93m 28 (B[m  KC_INT5, KC_INT4, KC_LALT, KC_LGUI, MO([95m1(B[m), CTL_T(KC_SPC), SFT_T(KC_SPC), MO([95m2(B[m), KC_ENT, KC_RALT, KC_APP, KC_RCTL[K
+[93m 29 (B[m  ),[K
+[93m 30 (B[m[K
+[93m 31 (B[m[_LAYER1] = LAYOUT([K
+[93m 32 (B[m  KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_DEL,[K
+[93m 33 (B[m  KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_NO, KC_ENT,  [K
+[93m 34 (B[m  KC_TRNS, KC_F6, KC_F7, KC_TRNS, KC_F9, KC_F10, KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_F11, KC_F12,[K
+[93m 35 (B[m  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, MO([95m3(B[m), KC_TRNS, KC_ENT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS[K
+[93m 36 (B[m  ),[K
+[93m 37 (B[m[K
+[93m 38 (B[m[_LAYER2] = LAYOUT([K
+[93m 39 (B[m  KC_ESC, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_DEL,[K
+[93m 40 (B[m  KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_GRV, KC_MINS, KC_EQL, KC_LBRC, KC_RBRC, KC_BSLS,[K
+[93m 41 (B[m  KC_TRNS, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_TILD, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE,[K
+[93m 42 (B[m  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_ENT,  KC_TRNS, MO([95m3(B[m), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS[K
+[93m 43 (B[m  ),[K
+[93m 44 (B[m[K
+[93m 45 (B[m[_LAYER3] = LAYOUT([K
+[93m 46 (B[m  BL_TOGG, QK_BOOT, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,[K
+[93m 47 (B[m  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_NO, KC_NO, [K
+[93m 48 (B[m  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_BTN1, KC_BTN2, KC_NO, KC_NO, KC_NO, KC_NO, [K
+[93m 49 (B[m  KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, KC_VOLD, KC_VOLU, KC_NO[K
+[93m 50 (B[m  ),[K
+[93m 51 (B[m[K
+(B[0;1;7mkeyboards/planck/keymaps/h008/keymap.c                                                                                                                                                                                      1,1            Top]112[2 q]112[2 q[1;5H[?25h[?25l[?1004h[?25h[?25l[53;228H(B[mj         [1;5H[?25h[?25l[53;228H [52;221H(B[0;1;7m2,0-1[2;5H[?25h[?25l[53;228H(B[mj[2;5H[?25h[?25l[53;228H [52;221H(B[0;1;7m3[3;5H[?25h[?25l[53;228H(B[mj[3;5H[?25h[?25l[53;228H [52;221H(B[0;1;7m4,1  [4;5H[?25h[?25l[53;228H(B[mj[4;5H[?25h[?25l[53;228H [52;221H(B[0;1;7m5[5;5H[?25h[?25l[53;228H(B[mj[5;5H[?25h[?25l[53;228H [52;221H(B[0;1;7m6[6;5H[?25h[?25l[53;228H(B[mj[6;5H[?25h[?25l[53;228H [52;221H(B[0;1;7m7[7;5H[?25h[?25l[53;228H(B[mj[7;5H[?25h[?25l[53;228H [52;221H(B[0;1;7m8[8;5H[?25h[?25l[53;228H(B[mj[8;5H[?25h[?25l[53;228H [52;221H(B[0;1;7m9[9;5H[?25h[?25l[53;228H(B[mj[9;5H[?25h[?25l[53;228H [52;221H(B[0;1;7m10,1[10;5H[?25h[?25l[53;228H(B[mj[10;5H[?25h[?25l[53;228H [52;222H(B[0;1;7m1,0-1[11;5H[?25h[?25l[53;228H(B[mj[11;5H[?25h[?25l[53;228H [52;222H(B[0;1;7m2,1  [12;5H[?25h[?25l[53;228H(B[mj[12;5H[?25h[?25l[53;228H [52;222H(B[0;1;7m3[13;5H[?25h[?25l[53;228H(B[mj[13;5H[?25h[?25l[53;228H [52;222H(B[0;1;7m4[14;5H[?25h[?25l[53;228H(B[mj[14;5H[?25h[?25l[53;228H [52;222H(B[0;1;7m5[15;5H[?25h[?25l[53;228H(B[mj[15;5H[?25h[?25l[53;228H [52;222H(B[0;1;7m6[16;5H[?25h[?25l[53;228H(B[mj[16;5H[?25h[?25l[53;228H [52;222H(B[0;1;7m7[17;5H[?25h[?25l[53;228H(B[mj[17;5H[?25h[?25l[53;228H [52;222H(B[0;1;7m8[18;5H[?25h[?25l[53;228H(B[mj[18;5H[?25h[?25l[53;228H [52;222H(B[0;1;7m9[19;5H[?25h[?25l[53;228H(B[mj[19;5H[?25h[?25l[53;228H [12;26H[46m{[20;5H}[52;221H(B[0;1;7m20[20;5H[?25h[?25l[53;228H(B[mj[20;5H[?25h[?25l[53;228H [12;26H{[20;5H}[52;222H(B[0;1;7m1,0-1[21;5H[?25h[?25l[53;228H(B[mj[21;5H[?25h[?25l[53;228H [52;222H(B[0;1;7m2,1  [22;5H[?25h[?25l[53;228H(B[mj[22;5H[?25h[?25l[53;228H [52;222H(B[0;1;7m3,0-1[23;5H[?25h[?25l[53;228H(B[mj[23;5H[?25h[?25l[53;228H [52;222H(B[0;1;7m4,1  [24;5H[?25h[?25l[53;228H(B[mj[24;5H[?25h[?25l[53;228H [52;222H(B[0;1;7m5[25;5H[?25h[?25l[53;228H(B[mj[25;5H[?25h[?25l[53;228H [52;222H(B[0;1;7m6[26;5H[?25h[?25l[53;228H(B[mj[26;5H[?25h[?25l[53;228H [52;222H(B[0;1;7m7[27;5H[?25h[?25l[53;228H(B[mj[27;5H[?25h[?25l[53;228H [52;222H(B[0;1;7m8[28;5H[?25h[?25l[53;228H(B[mj[28;5H[?25h[?25l[53;228H [52;222H(B[0;1;7m9[29;5H[?25h[?25l[53;228H(B[mj[29;5H[?25h[?25l[53;228H [52;221H(B[0;1;7m30,0-1[30;5H[?25h[?25l[53;228H(B[mj[30;5H[?25h[?25l[53;228H [31;5H[46m[(B[m_LAYER1[46m][52;222H(B[0;1;7m1,1  [31;5H[?25h[?25l[53;228H(B[mV[31;5H[?25h[?25l]112[2 q[?25h[?25l[53;228H1[31;6H[48;5;242m_LAYER1] = LAYOUT([19D[?25h[?25l[22B(B[0;1m-- VISUAL LINE --(B[m[K[?25h[?25l[210C1[31;5H[?25h[?25l[53;228Hj[31;5H[?25h[?25l[53;228H2[31;5H[48;5;242m[
+ KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_DEL,[52;222H(B[0;1;7m2[32;5H[?25h[?25l[53;228H(B[mj[32;5H[?25h[?25l[53;228H3[32;5H[48;5;242m 
+ KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_NO, KC_ENT,  [52;222H(B[0;1;7m3[33;5H[?25h[?25l[53;228H(B[mj[33;5H[?25h[?25l[53;228H4[33;5H[48;5;242m 
+ KC_TRNS, KC_F6, KC_F7, KC_TRNS, KC_F9, KC_F10, KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_F11, KC_F12,[52;222H(B[0;1;7m4[34;5H[?25h[?25l[53;228H(B[mj[34;5H[?25h[?25l[53;228H5[34;5H[48;5;242m 
+ KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, MO((B[m[95m[48;5;242m3(B[m[48;5;242m), KC_TRNS, KC_ENT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS[52;222H(B[0;1;7m5[35;5H[?25h[?25l[53;228H(B[mj[35;5H[?25h[?25l[53;228H6[35;5H[48;5;242m 
+ ),[52;222H(B[0;1;7m6[36;5H[?25h[?25l[53;228H(B[mj[36;5H[?25h[?25l[53;228H7[36;5H[48;5;242m [52;222H(B[0;1;7m7,0-1[37;5H[?25h[?25l[53;228H(B[md[37;5H[?25h[?25l[16B7 fewer lines[215X[31;5H[46m[(B[m_LAYER2[46m](B[m = LAYOUT([32;5H  KC_ESC, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_DEL,[33;5H  KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_GRV, KC_MINS, KC_EQL, KC_LBRC, KC_RBRC, KC_BSLS,[34;5H  KC_TRNS, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_TILD, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE,[35;5H  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_ENT,  KC_TRNS, MO([95m3(B[m), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS[36;5H  ),[38;12H3[39;7HBL_TOGG, QK_BOOT, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,[15X[40;10HNO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_NO, KC_NO,    [41;10HNO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_BTN1, KC_BTN2, KC_NO, KC_NO, KC_NO, KC_NO, [10X[42;10HNO, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, KC_VOLD, KC_VOLU, KC_NO    [45;12H4] = LAYOUT(KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_BSPC, KC_DEL, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_MINS, KC_EQL, KC_LBRC, KC_RBRC, KC_BSLS, KC_TRNS, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11[93m    (B[m, KC_F12, KC_NUHS, KC_NUBS, KC_PGUP, KC_PGDN, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, MO([95m6(B[m), KC_TRNS, KC_TRNS, KC_TRNS, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY),[47;3H[93m6 (B[m[93X[48;3H[93m7 (B[m[_LAYER5] = LAYOUT(KC_1, KC_1, KC_1, KC_1, KC_1, KC_1, KC_1, KC_1, KC_1, KC_1, KC_1, KC_1, KC_NO, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_NO, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCL[93m    (B[mN, KC_QUOT, TO([95m0(B[m), KC_NO, KC_NO, KC_C, KC_V, KC_NO, KC_NO, KC_N, KC_M, KC_NO, KC_NO, KC_NO),[10X[50;2H[93m48 (B[m    [51;2H[93m49 (B[m[_LAYER6] = LAYOUT(KC_TRNS, QK_BOOT, DB_TOGG, RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, KC_DEL, KC_TRNS, KC_TRNS, MU_MOD, AU_ON, AU_OFF, AG_NORM, AG_SWAP, DF([95m0(B[m), DF([95m1(B[m), DF([95m2(B[m), TO([95m5(B[m), KC_TRNS, KC_TRNS, MUV[51;236H[94m@@@[52;40H(B[0;1;7m[+][179C1,1  (B[m
+[13X7 fewer lines]112[2 q[31;5H[?25h[?25l[53;228Hj[31;5H[?25h[?25l[53;228H [31;5H[_LAYER2][52;222H(B[0;1;7m2[32;5H[?25h[?25l[53;228H(B[mj[32;5H[?25h[?25l[53;228H [52;222H(B[0;1;7m3[33;5H[?25h[?25l[53;228H(B[mj[33;5H[?25h[?25l[53;228H [52;222H(B[0;1;7m4[34;5H[?25h[?25l[53;228H(B[mj[34;5H[?25h[?25l[53;228H [52;222H(B[0;1;7m5[35;5H[?25h[?25l[53;228H(B[mj[35;5H[?25h[?25l[53;228H [52;222H(B[0;1;7m6[36;5H[?25h[?25l[53;228H(B[mj[36;5H[?25h[?25l[53;228H [52;222H(B[0;1;7m7,0-1[37;5H[?25h[?25l[53;228H(B[mp[37;5H[?25h[?25l[53;3Hmore lines[216X[38;5H[46m[(B[m_LAYER1[46m][39;7H(B[mKC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_DEL,[12X[40;10HTRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_NO, KC_ENT,[41;10HTRNS, KC_F6, KC_F7, KC_TRNS, KC_F9, KC_F10, KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_F11, KC_F12,[42;10HTRNS, KC_TRNS, KC_TRNS, KC_TRNS, MO([95m3(B[m), KC_TRNS, KC_ENT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS[45;12H3] = LAYOUT([K[46;2H[93m46 (B[m  BL_TOGG, QK_BOOT, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,[72X[47;3H[93m7 (B[m  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_NO, KC_NO,[48;3H[93m8 (B[m  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_BTN1, KC_BTN2, KC_NO, KC_NO, KC_NO, KC_NO, [K[49;2H[93m49 (B[m  KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, KC_VOLD, KC_VOLU, KC_NO[50;2H[93m50 (B[m  ),[51;2H[93m51 (B[m[K[52;222H(B[0;1;7m8,1  [38;5H[?25h[?25l[53;228H(B[m^A[38;5H[?25h[?25l[53;228H  [38;5H[_LAYER2][52;224H(B[0;1;7m8[38;12H[?25h[?25l[53;228H(B[mk[38;12H[?25h[?25l[53;228H [52;222H(B[0;1;7m7,0-1[37;5H[?25h[?25l[53;228H(B[mk[37;5H[?25h[?25l[53;228H [52;222H(B[0;1;7m6,4  [36;8H[?25h[?25l[53;228H(B[mk[36;8H[?25h[?25l[53;228H [52;222H(B[0;1;7m5,8[35;12H[?25h[?25l[53;228H(B[mk[35;12H[?25h[?25l[53;228H [52;222H(B[0;1;7m4[34;12H[?25h[?25l[53;228H(B[mk[34;12H[?25h[?25l[53;228H [52;222H(B[0;1;7m3[33;12H[?25h[?25l[53;228H(B[mk[33;12H[?25h[?25l[53;228H [52;222H(B[0;1;7m2[32;12H[?25h[?25l[53;228H(B[mk[32;12H[?25h[?25l[53;228H [52;222H(B[0;1;7m1[31;12H[?25h[?25l[53;228H(B[m^X[31;12H[?25h[?25l[53;228H  [31;12H1[?25h[?25l[53;228Hj[31;12H[?25h[?25l[53;228H [52;222H(B[0;1;7m2[32;12H[?25h[?25l[53;228H(B[mj[32;12H[?25h[?25l[53;228H [52;222H(B[0;1;7m3[33;12H[?25h[?25l[53;228H(B[mj[33;12H[?25h[?25l[53;228H [52;222H(B[0;1;7m4[34;12H[?25h[?25l[53;228H(B[ml[34;12H[?25h[?25l[53;228H [52;224H(B[0;1;7m9[34;13H[?25h[?25l[53;228H(B[ml[34;13H[?25h[?25l[53;228H [52;224H(B[0;1;7m10[34;14H[?25h[?25l[53;228H(B[ml[34;14H[?25h[?25l[53;228H [52;225H(B[0;1;7m1[34;15H[?25h[?25l[53;228H(B[ml[34;15H[?25h[?25l[53;228H [52;225H(B[0;1;7m2[34;16H[?25h[?25l[53;228H(B[ml[34;16H[?25h[?25l[53;228H [52;225H(B[0;1;7m3[34;17H[?25h[?25l[53;228H(B[ml[34;17H[?25h[?25l[53;228H [52;225H(B[0;1;7m4[34;18H[?25h[?25l[53;228H(B[ml[34;18H[?25h[?25l[53;228H [52;225H(B[0;1;7m5[34;19H[?25h[?25l[53;228H(B[ml[34;19H[?25h[?25l[53;228H [52;225H(B[0;1;7m6[34;20H[?25h[?25l[53;228H(B[ml[34;20H[?25h[?25l[53;228H [52;225H(B[0;1;7m7[34;21H[?25h[?25l[53;228H(B[ml[34;21H[?25h[?25l[53;228H [52;225H(B[0;1;7m8[34;22H[?25h[?25l[53;228H(B[ml[34;22H[?25h[?25l[53;228H [52;225H(B[0;1;7m9[34;23H[?25h[?25l[53;228H(B[ml[34;23H[?25h[?25l[53;228H [52;224H(B[0;1;7m20[34;24H[?25h[?25l[53;228H(B[ml[34;24H[?25h[?25l[53;228H [52;225H(B[0;1;7m1[34;25H[?25h[?25l[53;228H(B[ml[34;25H[?25h[?25l[53;228H [52;225H(B[0;1;7m2[34;26H[?25h[?25l[53;228H(B[ml[34;26H[?25h[?25l[53;228H [52;225H(B[0;1;7m3[34;27H[?25h[?25l[53;228H(B[ml[34;27H[?25h[?25l[53;228H [52;225H(B[0;1;7m4[34;28H[?25h[?25l[53;228H(B[ml[34;28H[?25h[?25l[53;228H [52;225H(B[0;1;7m5[34;29H[?25h[?25l[53;228H(B[ml[34;29H[?25h[?25l[53;228H [52;225H(B[0;1;7m6[34;30H[?25h[?25l[53;228H(B[ml[34;30H[?25h[?25l[53;228H [52;225H(B[0;1;7m7[34;31H[?25h[?25l[53;228H(B[ml[34;31H[?25h[?25l[53;228H [52;225H(B[0;1;7m8[34;32H[?25h[?25l[53;228H(B[ml[34;32H[?25h[?25l[53;228H [52;225H(B[0;1;7m9[34;33H[?25h[?25l[53;228H(B[ml[34;33H[?25h[?25l[53;228H [52;224H(B[0;1;7m30[34;34H[?25h[?25l[53;228H(B[ml[34;34H[?25h[?25l[53;228H [52;225H(B[0;1;7m1[34;35H[?25h[?25l[53;228H(B[ml[34;35H[?25h[?25l[53;228H [52;225H(B[0;1;7m2[34;36H[?25h[?25l[53;228H(B[ml[34;36H[?25h[?25l[53;228H [52;225H(B[0;1;7m3[34;37H[?25h[?25l[53;228H(B[ml[34;37H[?25h[?25l[53;228H [52;225H(B[0;1;7m4[34;38H[?25h[?25l[53;228H(B[ml[34;38H[?25h[?25l[53;228H [52;225H(B[0;1;7m5[34;39H[?25h[?25l[53;228H(B[ml[34;39H[?25h[?25l[53;228H [52;225H(B[0;1;7m6[34;40H[?25h[?25l[53;228H(B[ml[34;40H[?25h[?25l[53;228H [52;225H(B[0;1;7m7[34;41H[?25h[?25l[53;228H(B[mj[34;41H[?25h[?25l[53;228H [52;222H(B[0;1;7m5[35;41H[?25h[?25l[53;228H(B[ml[35;41H[?25h[?25l[53;228H [52;225H(B[0;1;7m8[35;42H[?25h[?25l[53;228H(B[ml[35;42H[?25h[?25l[53;228H [52;225H(B[0;1;7m9[35;43H[?25h[?25l[53;228H(B[ml[35;43H[?25h[?25l[53;228H [52;224H(B[0;1;7m40[35;44H[?25h[?25l[53;228H(B[ml[35;44H[?25h[?25l[53;228H [52;225H(B[0;1;7m1[35;45H[?25h[?25l[53;228H(B[ml[35;45H[?25h[?25l[53;228H [52;225H(B[0;1;7m2[35;46H[?25h[?25l[53;228H(B[ml[35;46H[?25h[?25l[53;228H [52;225H(B[0;1;7m3[35;47H[?25h[?25l[53;228H(B[ml[35;47H[?25h[?25l[53;228H [52;225H(B[0;1;7m4[35;48H[?25h[?25l[53;228H(B[ml[35;48H[?25h[?25l[53;228H [52;225H(B[0;1;7m5[35;49H[?25h[?25l[53;228H(B[ml[35;49H[?25h[?25l[53;228H [52;225H(B[0;1;7m6[35;50H[?25h[?25l[53;228H(B[ml[35;50H[?25h[?25l[53;228H [52;225H(B[0;1;7m7[35;51H[?25h[?25l[18B(B[mType  :qa!  and press <Enter> to abandon all changes and exit Nvim[35;51H[?25h[?25l[53;228Hl[35;51H[?25h[?25l[53;228H [52;225H(B[0;1;7m8[35;52H[?25h[?25l[53;228H(B[ml[35;52H[?25h[?25l[53;228H [52;225H(B[0;1;7m9[35;53H[?25h[?25l[53;228H(B[ml[35;53H[?25h[?25l[53;228H [52;224H(B[0;1;7m50[35;54H[?25h[?25l[53;228H(B[ml[35;54H[?25h[?25l[53;228H [52;225H(B[0;1;7m1[35;55H[?25h[?25l[53;228H(B[mh[35;55H[?25h[?25l[53;228H [52;225H(B[0;1;7m0[35;54H[?25h[?25l[53;228H(B[mh[35;54H[?25h[?25l[53;228H [52;224H(B[0;1;7m49[35;53H[?25h[?25l[53;228H(B[mh[35;53H[?25h[?25l[53;228H [52;225H(B[0;1;7m8[35;52H[?25h[?25l[53;228H(B[mh[35;52H[?25h[?25l[53;228H [52;225H(B[0;1;7m7[35;51H[?25h[?25l[53;228H(B[m^V[35;51H[?25h[?25l]112[2 q[?25h[?25l[53;228H1x1[35;51H[?25h[?25l[18B(B[0;1m-- VISUAL BLOCK --(B[m[212X[?25h[?25l[209C1x1[35;51H[?25h[?25l[53;228Hl  [35;51H[?25h[?25l[53;228H1x2[35;51H[48;5;242m [52;225H(B[0;1;7m8[35;52H[?25h[?25l[53;228H(B[ml  [35;52H[?25h[?25l[53;228H1x3[35;52H[48;5;242mK[52;225H(B[0;1;7m9[35;53H[?25h[?25l[53;228H(B[ml  [35;53H[?25h[?25l[53;228H1x4[35;53H[48;5;242mC[52;224H(B[0;1;7m50[35;54H[?25h[?25l[53;228H(B[ml  [35;54H[?25h[?25l[53;228H1x5[35;54H[48;5;242m_[52;225H(B[0;1;7m1[35;55H[?25h[?25l[53;228H(B[ml  [35;55H[?25h[?25l[53;228H1x6[35;55H[48;5;242mE[52;225H(B[0;1;7m2[35;56H[?25h[?25l[53;228H(B[ml  [35;56H[?25h[?25l[53;228H1x7[35;56H[48;5;242mN[52;225H(B[0;1;7m3[35;57H[?25h[?25l[53;228H(B[ml  [35;57H[?25h[?25l[53;228H1x8[35;57H[48;5;242mT[52;225H(B[0;1;7m4[35;58H[?25h[?25l[53;228H(B[md  [35;58H[?25h[?25l[53;228H [35;51H  KC_TRNS, MO([95m3(B[m), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS[8X[18B[18X[52;224H(B[0;1;7m47]112[2 q[35;51H[?25h[?25l[53;228H(B[ml[35;51H[?25h[?25l[53;228H [52;225H(B[0;1;7m8[35;52H[?25h[?25l[53;228H(B[ml[35;52H[?25h[?25l[53;228H [52;225H(B[0;1;7m9[35;53H[?25h[?25l[53;228H(B[ml[35;53H[?25h[?25l[53;228H [52;224H(B[0;1;7m50[35;54H[?25h[?25l[53;228H(B[ml[35;54H[?25h[?25l[53;228H [52;225H(B[0;1;7m1[35;55H[?25h[?25l[53;228H(B[ml[35;55H[?25h[?25l[53;228H [52;225H(B[0;1;7m2[35;56H[?25h[?25l[53;228H(B[ml[35;56H[?25h[?25l[53;228H [52;225H(B[0;1;7m3[35;57H[?25h[?25l[53;228H(B[ml[35;57H[?25h[?25l[53;228H [52;225H(B[0;1;7m4[35;58H[?25h[?25l[53;228H(B[ml[35;58H[?25h[?25l[53;228H [52;225H(B[0;1;7m5[35;59H[?25h[?25l[53;228H(B[ml[35;59H[?25h[?25l[53;228H [52;225H(B[0;1;7m6[35;60H[?25h[?25l[53;228H(B[mp[35;60H[?25h[?25l[53;228H [35;62HKC_ENT, MO([95m3(B[m), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS[52;225H(B[0;1;7m7[35;61H[?25h[?25l[53;228H(B[mj[35;61H[?25h[?25l[53;228H [52;222H(B[0;1;7m6,4 [36;8H[?25h[?25l[53;228H(B[mj[36;8H[?25h[?25l[53;228H [52;222H(B[0;1;7m7,0-1[37;5H[?25h[?25l[53;228H(B[mj[37;5H[?25h[?25l[53;228H [38;23H[46m([43;7H)[52;222H(B[0;1;7m8,19 [38;23H[?25h[?25l[53;228H(B[mj[38;23H[?25h[?25l[53;228H [38;23H([43;7H)[52;222H(B[0;1;7m9,57[39;61H[?25h[?25l[53;228H(B[mj[39;61H[?25h[?25l[53;228H [52;221H(B[0;1;7m40[40;61H[?25h[?25l[53;228H(B[mj[40;61H[?25h[?25l[53;228H [52;222H(B[0;1;7m1[41;61H[?25h[?25l[53;228H(B[mj[41;61H[?25h[?25l[53;228H [52;222H(B[0;1;7m2[42;61H[?25h[?25l[53;228H(B[mh[42;61H[?25h[?25l[53;228H [52;225H(B[0;1;7m6[42;60H[?25h[?25l[53;228H(B[mh[42;60H[?25h[?25l[53;228H [52;225H(B[0;1;7m5[42;59H[?25h[?25l[53;228H(B[mh[42;59H[?25h[?25l[53;228H [52;225H(B[0;1;7m4[42;58H[?25h[?25l[53;228H(B[mh[42;58H[?25h[?25l[53;228H [52;225H(B[0;1;7m3[42;57H[?25h[?25l[53;228H(B[mh[42;57H[?25h[?25l[53;228H [52;225H(B[0;1;7m2[42;56H[?25h[?25l[53;228H(B[ml[42;56H[?25h[?25l[53;228H [52;225H(B[0;1;7m3[42;57H[?25h[?25l[53;228H(B[ml[42;57H[?25h[?25l[53;228H [52;225H(B[0;1;7m4[42;58H[?25h[?25l[53;228H(B[ml[42;58H[?25h[?25l[53;228H [52;225H(B[0;1;7m5[42;59H[?25h[?25l[53;228H(B[mh[42;59H[?25h[?25l[53;228H [52;225H(B[0;1;7m4[42;58H[?25h[?25l[53;228H(B[m^V[42;58H[?25h[?25l]112[2 q[?25h[?25l[53;228H1x1[42;58H[?25h[?25l[11B(B[0;1m-- VISUAL BLOCK --(B[m[209C   [212D[?25h[?25l[209C1x1[42;58H[?25h[?25l[53;228Hl  [42;58H[?25h[?25l[53;228H1x2[42;58H[48;5;242m [52;225H(B[0;1;7m5[42;59H[?25h[?25l[53;228H(B[ml  [42;59H[?25h[?25l[53;228H1x3[42;59H[48;5;242mK[52;225H(B[0;1;7m6[42;60H[?25h[?25l[53;228H(B[ml  [42;60H[?25h[?25l[53;228H1x4[42;60H[48;5;242mC[52;225H(B[0;1;7m7[42;61H[?25h[?25l[53;228H(B[ml  [42;61H[?25h[?25l[53;228H1x5[42;61H[48;5;242m_[52;225H(B[0;1;7m8[42;62H[?25h[?25l[53;228H(B[ml  [42;62H[?25h[?25l[53;228H1x6[42;62H[48;5;242mE[52;225H(B[0;1;7m9[42;63H[?25h[?25l[53;228H(B[ml  [42;63H[?25h[?25l[53;228H1x7[42;63H[48;5;242mN[52;224H(B[0;1;7m60[42;64H[?25h[?25l[53;228H(B[ml  [42;64H[?25h[?25l[53;228H1x8[42;64H[48;5;242mT[52;225H(B[0;1;7m1[42;65H[?25h[?25l[53;228H(B[md  [42;65H[?25h[?25l[53;228H [42;58H KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS[8X[11B[18X[52;224H(B[0;1;7m54]112[2 q[42;58H[?25h[?25l[53;228H(B[mh[42;58H[?25h[?25l[53;228H [52;225H(B[0;1;7m3[42;57H[?25h[?25l[53;228H(B[mh[42;57H[?25h[?25l[53;228H [52;225H(B[0;1;7m2[42;56H[?25h[?25l[53;228H(B[mh[42;56H[?25h[?25l[53;228H [52;225H(B[0;1;7m1[42;55H[?25h[?25l[53;228H(B[mh[42;55H[?25h[?25l[53;228H [52;225H(B[0;1;7m0[42;54H[?25h[?25l[53;228H(B[mh[42;54H[?25h[?25l[53;228H [52;224H(B[0;1;7m49[42;53H[?25h[?25l[53;228H(B[mh[42;53H[?25h[?25l[53;228H [52;225H(B[0;1;7m8[42;52H[?25h[?25l[53;228H(B[mh[42;52H[?25h[?25l[53;228H [52;225H(B[0;1;7m7[42;51H[?25h[?25l[53;228H(B[mh[42;51H[?25h[?25l[53;228H [52;225H(B[0;1;7m6[42;50H[?25h[?25l[53;228H(B[mh[42;50H[?25h[?25l[53;228H [52;225H(B[0;1;7m5[42;49H[?25h[?25l[53;228H(B[mp[42;49H[?25h[?25l[53;228H [42;50H KC_ENT,KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS[52;225H(B[0;1;7m6[42;50H[?25h[?25l[53;228H(B[ml[42;50H[?25h[?25l[53;228H [52;225H(B[0;1;7m7[42;51H[?25h[?25l[53;228H(B[ml[42;51H[?25h[?25l[53;228H [52;225H(B[0;1;7m8[42;52H[?25h[?25l[53;228H(B[ml[42;52H[?25h[?25l[53;228H [52;225H(B[0;1;7m9[42;53H[?25h[?25l[53;228H(B[ml[42;53H[?25h[?25l[53;228H [52;224H(B[0;1;7m50[42;54H[?25h[?25l[53;228H(B[ml[42;54H[?25h[?25l[53;228H [52;225H(B[0;1;7m1[42;55H[?25h[?25l[53;228H(B[ml[42;55H[?25h[?25l[53;228H [52;225H(B[0;1;7m2[42;56H[?25h[?25l[53;228H(B[ml[42;56H[?25h[?25l[53;228H [52;225H(B[0;1;7m3[42;57H[?25h[?25l[53;228H(B[ml[42;57H[?25h[?25l[53;228H [52;225H(B[0;1;7m4[42;58H[?25h[?25l[53;228H(B[ml[42;58H[?25h[?25l[53;228H [52;225H(B[0;1;7m5[42;59H[?25h[?25l[53;228H(B[mh[42;59H[?25h[?25l[53;228H [52;225H(B[0;1;7m4[42;58H[?25h[?25l[53;228H(B[mi[42;58H[?25h[?25l[53;228H ]112[6 q[42;58H[?25h[?25l[11B(B[0;1m-- INSERT --[?25h[?25l[42;58H[?25h[?25l(B[m KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS[52;225H(B[0;1;7m5[42;59H[?25h[?25l(B[m  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS[52;225H(B[0;1;7m6-57[42;61H[?25h[?25l(B[mhKC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS[52;225H(B[0;1;7m7-58[42;62H[?25h[?25l(B[mhKC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS[52;225H(B[0;1;7m8-59[42;63H[?25h[?25l(B[mhKC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS[52;225H(B[0;1;7m9-60[42;64H[?25h[?25l(B[mhKC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS[52;224H(B[0;1;7m60-61[42;65H[?25h[?25l(B[mKC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS [52;224H(B[0;1;7m59-60[42;64H[?25h[?25l(B[mKC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS [52;225H(B[0;1;7m8-59[42;63H[?25h[?25l(B[mKC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS [52;225H(B[0;1;7m7-58[42;62H[?25h[?25l(B[mKC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS [52;225H(B[0;1;7m6-57[42;61H[?25h[?25l(B[mKC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS  [52;225H(B[0;1;7m5   [42;59H[?25h[?25l(B[m`KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS[52;225H(B[0;1;7m6[42;60H[?25h[?25l(B[m`KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS[52;225H(B[0;1;7m7[42;61H[?25h[?25l(B[mKC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS [52;225H(B[0;1;7m6[42;60H[?25h[?25l(B[mKC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS [52;225H(B[0;1;7m5[42;59H[?25h[?25l[52;225H4[42;58H[?25h[?25l[52;225H3[42;57H[?25h[?25l[52;225H2[42;56H[?25h[?25l[52;225H1[42;55H[?25h[?25l[52;225H0[42;54H[?25h[?25l[52;224H49[42;53H[?25h[?25l[52;225H8[42;52H[?25h[?25l[52;225H7[42;51H[?25h[?25l(B[mKC_ENT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS [52;225H(B[0;1;7m6[42;50H[?25h[?25l[52;222H1[41;50H[?25h[?25l[52;222H0[40;50H[?25h[?25l[52;221H39[39;50H[?25h[?25l[38;23H(B[m[46m([43;7H)[52;222H(B[0;1;7m8,20[38;24H[?25h[?25l(B[m([43;7H)[52;222H(B[0;1;7m7,1 [37;5H[?25h[?25l[52;222H6,5[36;9H[?25h[?25l[52;222H5,46[35;50H[?25h[?25l[52;225H7[35;51H[?25h[?25l[C(B[mKC_TRNS, KC_ENT, MO([95m3(B[m), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS [60D[?25h[?25l[18B[12X[52;225H(B[0;1;7m6]112[2 q[35;50H[?25h[?25l[53;228H(B[m:[35;50H[?25h[?25l[53;228H [53;1H:]112[2 q[?25h[?25lw[?25h[?25lq[?25h[?25l'[?25h[?25l [?25h[?25l[?25h[?25l[53;1H[?25h[?25l"keyboards/planck/keymaps/h008/keymap.c"]112[2 q[?25h[?25l[C58L, 3142B written[53;1H[?25h[?25l]112[2 q(B[m[?25h[?1l>[?1049l[23;0;0t[23;0t[?2004l[?1004l[>4;0m[?25h[?2004h]0;h_008@pop-os: ~/qmk_firmware[01;32mh_008@pop-os[00m:[01;34m~/qmk_firmware
+[34;1m> [0m[00m vim  keyboards/planck/keymaps/h008/keymap.c [C[C[C[25P./scripts/flash.sh[Cbuild[C[C[C[C
+[?2004l[34mΨ[0m[0m Compiling keymap with [36mgmake --jobs=1 planck/rev6:h008[0m
+[0m
+[0m[0m
+Making [1mplanck/rev6[0m with keymap [1mh008[0m
+
+arm-none-eabi-gcc (15:10.3-2021.07-4) 10.3.1 20210621 (release)
+Copyright (C) 2020 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Size before:
+   text	   data	    bss	    dec	    hex	filename
+      0	  53604	      0	  53604	   d164	planck_rev6_h008.bin
+
+Compiling: quantum/keymap_introspection.c                                                           [32;01m[OK][0m
+Compiling: quantum/command.c                                                                        [32;01m[OK][0m
+Linking: .build/planck_rev6_h008.elf                                                                [32;01m[OK][0m
+Creating binary load file for flashing: .build/planck_rev6_h008.bin                                 [32;01m[OK][0m
+Creating load file for flashing: .build/planck_rev6_h008.hex                                        [32;01m[OK][0m
+
+Size after:
+   text	   data	    bss	    dec	    hex	filename
+      0	  53604	      0	  53604	   d164	planck_rev6_h008.bin
+
+Copying planck_rev6_h008.bin to qmk_firmware folder                                                 [32;01m[OK][0m
+(Firmware size check does not yet support STM32F303; skipping)
+[0m[0m[0m[?2004h]0;h_008@pop-os: ~/qmk_firmware[01;32mh_008@pop-os[00m:[01;34m~/qmk_firmware
+[34;1m> [0m[00m ./scripts/build.sh [C[C[C[25@vim  keyboards/planck/keymaps/h008/keymap.c[C[C[C[C[25P./scripts/flash.sh[C
+[?2004l[sudo] password for h_008: 
+dfu-util 0.9
+
+Copyright 2005-2009 Weston Schmidt, Harald Welte and OpenMoko Inc.
+Copyright 2010-2016 Tormod Volden and Stefan Schmidt
+This program is Free Software and has ABSOLUTELY NO WARRANTY
+Please report bugs to http://sourceforge.net/p/dfu-util/tickets/
+
+Opening DFU capable USB device...
+ID 0483:df11
+Run-time device DFU version 011a
+Claiming USB DFU Interface...
+Setting Alternate Setting #0 ...
+Determining device status: state = dfuERROR, status = 10
+dfuERROR, clearing status
+Determining device status: state = dfuIDLE, status = 0
+dfuIDLE, continuing
+DFU mode device DFU version 011a
+Device returned transfer size 2048
+DfuSe interface name: "Internal Flash  "
+Downloading to address = 0x08000000, size = 53608
+Download	[                         ]   0%            0 bytesDownload	[=                        ]   7%         4096 bytesDownload	[==                       ]  11%         6144 bytesDownload	[===                      ]  15%         8192 bytesDownload	[====                     ]  19%        10240 bytesDownload	[=====                    ]  22%        12288 bytesDownload	[======                   ]  26%        14336 bytesDownload	[=======                  ]  30%        16384 bytesDownload	[========                 ]  34%        18432 bytesDownload	[=========                ]  38%        20480 bytesDownload	[==========               ]  42%        22528 bytesDownload	[===========              ]  45%        24576 bytesDownload	[============             ]  49%        26624 bytesDownload	[=============            ]  53%        28672 bytesDownload	[==============           ]  57%        30720 bytesDownload	[===============          ]  61%        32768 bytesDownload	[================         ]  64%        34816 bytesDownload	[=================        ]  68%        36864 bytesDownload	[==================       ]  72%        38912 bytesDownload	[===================      ]  76%        40960 bytesDownload	[====================     ]  80%        43008 bytesDownload	[=====================    ]  84%        45056 bytesDownload	[======================   ]  91%        49152 bytesDownload	[=======================  ]  95%        51200 bytesDownload	[======================== ]  99%        53248 bytesDownload	[=========================] 100%        53608 bytes
+Download done.
+File downloaded successfully
+Transitioning to dfuMANIFEST state
+[?2004h]0;h_008@pop-os: ~/qmk_firmware[01;32mh_008@pop-os[00m:[01;34m~/qmk_firmware
+[34;1m> [0m[00m gi[K[Kssg[Kh rii[K[Koot2[K2[K@qee.qu.[K[K[K[K[K[K[K133.17[K8.235.232 -p t[K50022
+[?2004lWelcome to Ubuntu 20.04.4 LTS (GNU/Linux 5.13.0-40-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+34 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+
+1 updates could not be installed automatically. For more details,
+see /var/log/unattended-upgrades/unattended-upgrades.log
+Your Hardware Enablement Stack (HWE) is supported until April 2025.
+
+*** System restart required ***
+Last login: Fri Oct 28 11:07:15 2022 from 121.1.152.92
+]0;root@v133-18-235-232: ~root@v133-18-235-232:~# ls
+[0m[01;34mgithubkey[0m  [01;34mr.csc.service.co.jp[0m  [01;34msites-csc.service.co.jp[0m  [01;34msites-nyuyoku.service.co.jp[0m  [01;34msnap[0m
+]0;root@v133-18-235-232: ~root@v133-18-235-232:~# cd sites-csc.service.co.jp/
+]0;root@v133-18-235-232: ~/sites-csc.service.co.jproot@v133-18-235-232:~/sites-csc.service.co.jp# ls
+[0m[01;34mdata[0m  default.conf  docker-compose.yml  [01;34mnuxt[0m  [01;34mphp[0m
+]0;root@v133-18-235-232: ~/sites-csc.service.co.jproot@v133-18-235-232:~/sites-csc.service.co.jp# cd data
+]0;root@v133-18-235-232: ~/sites-csc.service.co.jp/dataroot@v133-18-235-232:~/sites-csc.service.co.jp/data# ks[K[Kks[K[Kls
+[0m[01;34mhtml[0m
+]0;root@v133-18-235-232: ~/sites-csc.service.co.jp/dataroot@v133-18-235-232:~/sites-csc.service.co.jp/data# cd html
+]0;root@v133-18-235-232: ~/sites-csc.service.co.jp/data/htmlroot@v133-18-235-232:~/sites-csc.service.co.jp/data/html# ls
+[0m[01;34mcommon[0m  [01;34mcompany[0m  [01;34mcontact[0m  favicon.ico  [01;34mgoods[0m  [01;34mimage[0m  [01;34minclude[0m  [01;32mindex2.php[0m  index.html  [01;32mindex.php[0m  [01;34mlib[0m  [01;34mmovie[0m  [01;34mnews[0m  [01;34mpolicy[0m  README.md  [01;34mrecruit[0m  [01;34mrecruit_csc[0m  [01;34mrecruitment[0m  [01;34mservice[0m  [01;34msitemap[0m  [01;34msystem[0m  [01;34mtemplate[0m  [01;34mtr[0m  [01;34mupload[0m
+]0;root@v133-18-235-232: ~/sites-csc.service.co.jp/data/htmlroot@v133-18-235-232:~/sites-csc.service.co.jp/data/html# vim .
+[?1049h[22;0;0t[22;0;0t[?1h=[H[2J]11;?[?2004h[?25h[?25l(B[m[H[2J[96m" ============================================================================(B[m[K
+[96m" Netrw Directory Listing                                        (B[0;1m[96m(netrw v165)(B[m[K
+[96m"   /root/sites-csc.service.co.jp/data/html(B[m[K
+[96m"   Sorted by(B[m[93m      name(B[m[K
+[96m"   Sort sequence:(B[m[93m [\/]$(B[m[96m,(B[m[93m\<core\%(\.\d\+\)\=\>(B[m[96m,(B[m[93m\.h$(B[m[96m,(B[m[93m\.c$(B[m[96m,(B[m[93m\.cpp$(B[m[96m,(B[m[93m\~\=\*$(B[m[96m,(B[m[93m*(B[m[96m,(B[m[93m\.o$(B[m[96m,(B[m[93m\.obj$(B[m[96m,(B[m[93m\.info$(B[m[96m,(B[m[93m\.swp$(B[m[96m,(B[m[93m\.bak$(B[m[96m,(B[m[93m\~$(B[m[K
+[96m"   Quick Help: (B[0;1m[96m<F1>(B[m[38;5;224m:(B[mhelp  (B[0;1m[96m-(B[m[38;5;224m:(B[mgo up dir  (B[0;1m[96mD(B[m[38;5;224m:(B[mdelete  (B[0;1m[96mR(B[m[38;5;224m:(B[mrename  (B[0;1m[96ms(B[m[38;5;224m:(B[msort-by  (B[0;1m[96mx(B[m[38;5;224m:(B[mspecial[K
+[96m" ==============================================================================(B[m[K
+(B[0;4m[38;5;159m..(B[0;1;4m[96m/(B[0;4m                                                                                                                                                                                                                                           
+(B[m[38;5;159m.(B[0;1m[96m/(B[m[K
+[38;5;159mcommon(B[0;1m[96m/(B[m[K
+[38;5;159mcompany(B[0;1m[96m/(B[m[K
+[38;5;159mcontact(B[0;1m[96m/(B[m[K
+[38;5;159mgoods(B[0;1m[96m/(B[m[K
+[38;5;159mimage(B[0;1m[96m/(B[m[K
+[38;5;159minclude(B[0;1m[96m/(B[m[K
+[38;5;159mlib(B[0;1m[96m/(B[m[K
+[38;5;159mmovie(B[0;1m[96m/(B[m[K
+[38;5;159mnews(B[0;1m[96m/(B[m[K
+[38;5;159mpolicy(B[0;1m[96m/(B[m[K
+[38;5;159mrecruit(B[0;1m[96m/(B[m[K
+[38;5;159mrecruit_csc(B[0;1m[96m/(B[m[K
+[38;5;159mrecruitment(B[0;1m[96m/(B[m[K
+[38;5;159mservice(B[0;1m[96m/(B[m[K
+[38;5;159msitemap(B[0;1m[96m/(B[m[K
+[38;5;159msystem(B[0;1m[96m/(B[m[K
+[38;5;159mtemplate(B[0;1m[96m/(B[m[K
+[38;5;159mtr(B[0;1m[96m/(B[m[K
+[38;5;159mupload(B[0;1m[96m/(B[m[K
+[38;5;81mindex.php(B[0;1m[96m*(B[m[K
+[38;5;81mindex2.php(B[0;1m[96m*(B[m[K
+.gitignore[K
+README.md[K
+favicon.ico[K
+index.html[K
+[94m~[K
+~[K
+~[K
+~[K
+~[K
+~[K
+~[K
+~[K
+~[K
+~[K
+~[K
+~[K
+~[K
+~[K
+~[K
+~[K
+~[K
+(B[0;1;7m~/sites-csc.service.co.jp/data/html [RO]                                                                                                                                                                                    8,1            All]112[2 q]112[2 q[44A[?25h[?25l[?1004h[?25h[?25l[53;228H(B[mj         [45A[?25h[?25l[53;228H [45A[38;5;159m..(B[0;1m[96m/(B[m[K
+(B[0;4m[38;5;159m.(B[0;1;4m[96m/(B[0;4m                                                                                                                                                                                                                                            [52;221H(B[0;1;7m9[43A[?25h[?25l[53;228H(B[mj[44A[?25h[?25l[53;228H [44A[38;5;159m.(B[0;1m[96m/(B[m[K
+(B[0;4m[38;5;159mcommon(B[0;1;4m[96m/(B[0;4m                                                                                                                                                                                                                                       [52;221H(B[0;1;7m10,1[42A[?25h[?25l[53;228H(B[mj[43A[?25h[?25l[53;228H [43A[38;5;159mcommon(B[0;1m[96m/(B[m[K
+(B[0;4m[38;5;159mcompany(B[0;1;4m[96m/(B[0;4m                                                                                                                                                                                                                                      [52;222H(B[0;1;7m1[41A[?25h[?25l[53;228H(B[mj[42A[?25h[?25l[53;228H [42A[38;5;159mcompany(B[0;1m[96m/(B[m[K
+(B[0;4m[38;5;159mcontact(B[0;1;4m[96m/(B[0;4m                                                                                                                                                                                                                                      [52;222H(B[0;1;7m2[40A[?25h[?25l[53;228H(B[mj[41A[?25h[?25l[53;228H [41A[38;5;159mcontact(B[0;1m[96m/(B[m[K
+(B[0;4m[38;5;159mgoods(B[0;1;4m[96m/(B[0;4m                                                                                                                                                                                                                                        [52;222H(B[0;1;7m3[39A[?25h[?25l[53;228H(B[mj[40A[?25h[?25l[53;228H [40A[38;5;159mgoods(B[0;1m[96m/(B[m[K
+(B[0;4m[38;5;159mimage(B[0;1;4m[96m/(B[0;4m                                                                                                                                                                                                                                        [52;222H(B[0;1;7m4[38A[?25h[?25l[53;228H(B[mj[39A[?25h[?25l[53;228H [39A[38;5;159mimage(B[0;1m[96m/(B[m[K
+(B[0;4m[38;5;159minclude(B[0;1;4m[96m/(B[0;4m                                                                                                                                                                                                                                      [52;222H(B[0;1;7m5[37A[?25h[?25l[53;228H(B[mj[38A[?25h[?25l[53;228H [38A[38;5;159minclude(B[0;1m[96m/(B[m[K
+(B[0;4m[38;5;159mlib(B[0;1;4m[96m/(B[0;4m                                                                                                                                                                                                                                          [52;222H(B[0;1;7m6[36A[?25h[?25l[53;228H(B[mj[37A[?25h[?25l[53;228H [37A[38;5;159mlib(B[0;1m[96m/(B[m[K
+(B[0;4m[38;5;159mmovie(B[0;1;4m[96m/(B[0;4m                                                                                                                                                                                                                                        [52;222H(B[0;1;7m7[35A[?25h[?25l[3;44H(B[m[96m/movie[5B(B[0;4m[38;5;159m..(B[0;1;4m[96m/(B[0;4m                                                                                                                                                                                                                                           
+
+(B[m.htaccess
+arigatou.jpg
+arigatou_dig.mp4
+arigatou_dig_210826_edit.mp4
+arigatou_dig_210826_edit2.mp4
+arigatou_dig_210827_edit.mp4
+arigatou_dig_a.mp4
+arigatou_dig_a2.mp4[K
+arigatou_dig_i.mp4
+arigatou_movie_dig.m4v
+arigatou_movie_dig.webm
+movie.html  
+movie_01.html
+movie_02.html
+movie_03.html
+[94m~[K
+~[K
+~[K
+~[K
+~[K
+~[K
+~[K
+~[K
+~[K
+~[K[18B(B[0;1;7mmovie [RO]                              [180C8,1 ]112[2 q[44A[?25h[?25l[53;228H(B[mj[45A[?25h[?25l[53;228H [45A[38;5;159m..(B[0;1m[96m/(B[m[K
+(B[0;4m[38;5;159m.(B[0;1;4m[96m/(B[0;4m                                                                                                                                                                                                                                            [52;221H(B[0;1;7m9[43A[?25h[?25l[53;228H(B[mj[44A[?25h[?25l[53;228H [44A[38;5;159m.(B[0;1m[96m/(B[m[K
+(B[0;4m.htaccess                                                                                                                                                                                                                                     [52;221H(B[0;1;7m10,1[42A[?25h[?25l[53;228H(B[mj[43A[?25h[?25l[53;228H [43A.htaccess[K
+(B[0;4marigatou.jpg                                                                                                                                                                                                                                  [52;222H(B[0;1;7m1[41A[?25h[?25l[53;228H(B[mj[42A[?25h[?25l[53;228H [42Aarigatou.jpg[K
+(B[0;4marigatou_dig.mp4                                                                                                                                                                                                                              [52;222H(B[0;1;7m2[40A[?25h[?25l[53;228H(B[mj[41A[?25h[?25l[53;228H [41Aarigatou_dig.mp4[K
+(B[0;4marigatou_dig_210826_edit.mp4                                                                                                                                                                                                                  [52;222H(B[0;1;7m3[39A[?25h[?25l[53;228H(B[mj[40A[?25h[?25l[53;228H [40Aarigatou_dig_210826_edit.mp4[K
+(B[0;4marigatou_dig_210826_edit2.mp4                                                                                                                                                                                                                 [52;222H(B[0;1;7m4[38A[?25h[?25l[53;228H(B[mj[39A[?25h[?25l[53;228H [39Aarigatou_dig_210826_edit2.mp4[K
+(B[0;4marigatou_dig_210827_edit.mp4                                                                                                                                                                                                                  [52;222H(B[0;1;7m5[37A[?25h[?25l[53;228H(B[mj[38A[?25h[?25l[53;228H [38Aarigatou_dig_210827_edit.mp4[K
+(B[0;4marigatou_dig_a.mp4                                                                                                                                                                                                                            [52;222H(B[0;1;7m6[36A[?25h[?25l[53;228H(B[mj[37A[?25h[?25l[53;228H [37Aarigatou_dig_a.mp4[K
+(B[0;4marigatou_dig_a2.mp4                                                                                                                                                                                                                           [52;222H(B[0;1;7m7[35A[?25h[?25l[53;228H(B[mj[36A[?25h[?25l[53;228H [36Aarigatou_dig_a2.mp4[K
+(B[0;4marigatou_dig_i.mp4                                                                                                                                                                                                                            [52;222H(B[0;1;7m8[34A[?25h[?25l[53;228H(B[mj[35A[?25h[?25l[53;228H [35Aarigatou_dig_i.mp4[K
+(B[0;4marigatou_movie_dig.m4v                                                                                                                                                                                                                        [52;222H(B[0;1;7m9[33A[?25h[?25l[53;228H(B[mj[34A[?25h[?25l[53;228H [34Aarigatou_movie_dig.m4v[K
+(B[0;4marigatou_movie_dig.webm                                                                                                                                                                                                                       [52;221H(B[0;1;7m20[32A[?25h[?25l[53;228H(B[mj[33A[?25h[?25l[53;228H [33Aarigatou_movie_dig.webm[K
+(B[0;4mmovie.html                                                                                                                                                                                                                                    [52;222H(B[0;1;7m1[31A[?25h[?25l[H(B[m[96m[46m<(B[m[96m!doctype html(B[m[96m[46m>(B[m[63X
+(B[0;1m[96m<(B[m[93mhtml(B[0;1m[96m>(B[m[71X
+(B[0;1m[96m<(B[m[93mhead(B[0;1m[96m>(B[m[43X
+(B[0;1m[96m<(B[m[93mmeta(B[0;1m[96m (B[m[38;5;121mhttp-equiv(B[0;1m[96m=(B[m[95m"set-cookie"(B[0;1m[96m (B[m[38;5;121mcontent(B[0;1m[96m=(B[m[95m"videoaccess=true;"(B[0;1m[96m>
+<(B[m[93mmeta(B[0;1m[96m (B[m[38;5;121mcharset(B[0;1m[96m=(B[m[95m"utf-8"(B[0;1m[96m>(B[m[89X
+(B[0;1m[96m<(B[m[93mtitle(B[0;1m[96m>(B[m[38;5;225mてごころ(B[0;1m[96m</(B[m[93mtitle(B[0;1m[96m>(B[m[57X
+(B[0;1m[96m</(B[m[93mhead(B[0;1m[96m>(B[m[73X
+   
+(B[0;1m[96m<(B[m[93mbody(B[0;1m[96m (B[m[38;5;224moncontextmenu="(B[m[93mreturn(B[m[38;5;224m (B[m[95mfalse(B[m[38;5;224m;"(B[0;1m[96m>
+<(B[m[93mdiv(B[0;1m[96m (B[m[38;5;121malign(B[0;1m[96m=(B[m[95m"center"(B[0;1m[96m>
+<(B[m[93mvideo(B[0;1m[96m (B[m[38;5;121mposter(B[0;1m[96m=(B[m[95m"arigatou.jpg"(B[0;1m[96m (B[m[38;5;121mpreload(B[0;1m[96m=(B[m[95m"auto"(B[0;1m[96m (B[m[38;5;121mcontrols(B[0;1m[96m controlslist=(B[m[95m"nodownload"(B[0;1m[96m (B[m[38;5;121mwidth(B[0;1m[96m=(B[m[95m"640"(B[0;1m[96m (B[m[38;5;121mheight(B[0;1m[96m=(B[m[95mauto(B[0;1m[96m >
+<(B[m[93msource(B[0;1m[96m (B[m[38;5;121msrc(B[0;1m[96m=(B[m[95m'arigatou_movie_dig.webm'(B[0;1m[96m (B[m[38;5;121mtype(B[0;1m[96m=(B[m[95m"video/webm"(B[0;1m[96m >
+<(B[m[93msource(B[0;1m[96m (B[m[38;5;121msrc(B[0;1m[96m=(B[m[95m'arigatou_movie_dig.m4v'(B[0;1m[96m >
+<(B[m[93msource(B[0;1m[96m (B[m[38;5;121msrc(B[0;1m[96m=(B[m[95m'arigatou_dig.mp4'(B[0;1m[96m >
+<(B[m[93msource(B[0;1m[96m (B[m[38;5;121msrc(B[0;1m[96m=(B[m[95m'arigatou_dig_a2.mp4'(B[0;1m[96m >
+<(B[m[93msource(B[0;1m[96m (B[m[38;5;121msrc(B[0;1m[96m=(B[m[95m'arigatou_dig_a.mp4'(B[0;1m[96m >
+<(B[m[93msource(B[0;1m[96m (B[m[38;5;121msrc(B[0;1m[96m=(B[m[95m'arigatou_dig_i.mp4'(B[0;1m[96m >
+(B[m    (B[0;1m[96m<(B[m[93mp(B[0;1m[96m>(B[m動画を再生するには、videoタグをサポートしたブラウザが必要です。(B[0;1m[96m</(B[m[93mp(B[0;1m[96m>
+</(B[m[93mvideo(B[0;1m[96m>(B[m[14X
+(B[0;1m[96m</(B[m[93mdiv(B[0;1m[96m>(B[m[17X
+(B[0;1m[96m</(B[m[93mbody(B[0;1m[96m>(B[m[K
+(B[0;1m[96m</(B[m[93mhtml(B[0;1m[96m>(B[m[6X
+[94m~[K
+~[K[28B(B[0;1;7m~/sites-csc.service.co.jp/data/html/movie/movie.html[168C1,1 ]112[2 q[H[?25h[?25l[53;228H(B[m:[H[?25h[?25l[52B[J:]112[2 q[?25h[?25lq[?25h[?25l[53;1H[?25h[?25l]112[2 q[?25h[?25l]112[2 q(B[m[?25h[?1l>[?1049l[23;0;0t[23;0;0t[?2004l[?1004l[?25h]0;root@v133-18-235-232: ~/sites-csc.service.co.jp/data/htmlroot@v133-18-235-232:~/sites-csc.service.co.jp/data/html# cd .. [K/../..[K[K
+]0;root@v133-18-235-232: ~/sites-csc.service.co.jproot@v133-18-235-232:~/sites-csc.service.co.jp# ks[K[Kls
+[0m[01;34mdata[0m  default.conf  docker-compose.yml  [01;34mnuxt[0m  [01;34mphp[0m
+]0;root@v133-18-235-232: ~/sites-csc.service.co.jproot@v133-18-235-232:~/sites-csc.service.co.jp# git str[Katus
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+]0;root@v133-18-235-232: ~/sites-csc.service.co.jproot@v133-18-235-232:~/sites-csc.service.co.jp# git push
+Everything up-to-date
+]0;root@v133-18-235-232: ~/sites-csc.service.co.jproot@v133-18-235-232:~/sites-csc.service.co.jp# [K]0;root@v133-18-235-232: ~/sites-csc.service.co.jproot@v133-18-235-232:~/sites-csc.service.co.jp# [K]0;root@v133-18-235-232: ~/sites-csc.service.co.jproot@v133-18-235-232:~/sites-csc.service.co.jp# git pull
+remote: Enumerating objects: 18, done.[K
+remote: Counting objects:   5% (1/18)[Kremote: Counting objects:  11% (2/18)[Kremote: Counting objects:  16% (3/18)[Kremote: Counting objects:  22% (4/18)[Kremote: Counting objects:  27% (5/18)[Kremote: Counting objects:  33% (6/18)[Kremote: Counting objects:  38% (7/18)[Kremote: Counting objects:  44% (8/18)[Kremote: Counting objects:  50% (9/18)[Kremote: Counting objects:  55% (10/18)[Kremote: Counting objects:  61% (11/18)[Kremote: Counting objects:  66% (12/18)[Kremote: Counting objects:  72% (13/18)[Kremote: Counting objects:  77% (14/18)[Kremote: Counting objects:  83% (15/18)[Kremote: Counting objects:  88% (16/18)[Kremote: Counting objects:  94% (17/18)[Kremote: Counting objects: 100% (18/18)[Kremote: Counting objects: 100% (18/18), done.[K
+remote: Compressing objects:  20% (1/5)[Kremote: Compressing objects:  40% (2/5)[Kremote: Compressing objects:  60% (3/5)[Kremote: Compressing objects:  80% (4/5)[Kremote: Compressing objects: 100% (5/5)[Kremote: Compressing objects: 100% (5/5), done.[K
+Unpacking objects:   5% (1/18)Unpacking objects:  11% (2/18)Unpacking objects:  16% (3/18)Unpacking objects:  22% (4/18)Unpacking objects:  27% (5/18)Unpacking objects:  33% (6/18)Unpacking objects:  38% (7/18)Unpacking objects:  44% (8/18)Unpacking objects:  44% (8/18), 1.70 MiB | 1.69 MiB/sUnpacking objects:  44% (8/18), 10.89 MiB | 5.42 MiB/sUnpacking objects:  44% (8/18), 20.01 MiB | 6.64 MiB/sremote: Total 18 (delta 11), reused 18 (delta 11), pack-reused 0[K
+Unpacking objects:  50% (9/18), 24.53 MiB | 6.98 MiB/sUnpacking objects:  55% (10/18), 25.71 MiB | 4.94 MiB/sUnpacking objects:  61% (11/18), 25.71 MiB | 4.94 MiB/sUnpacking objects:  66% (12/18), 25.71 MiB | 4.94 MiB/sUnpacking objects:  72% (13/18), 25.71 MiB | 4.94 MiB/sUnpacking objects:  77% (14/18), 25.71 MiB | 4.94 MiB/sUnpacking objects:  83% (15/18), 25.71 MiB | 4.94 MiB/sUnpacking objects:  88% (16/18), 25.71 MiB | 4.94 MiB/sUnpacking objects:  94% (17/18), 25.71 MiB | 4.94 MiB/sUnpacking objects: 100% (18/18), 25.71 MiB | 4.94 MiB/sUnpacking objects: 100% (18/18), 25.71 MiB | 4.93 MiB/s, done.
+From github.com:h008/sites-csc.service.co.jp
+   b0ebd32..29c2687  main       -> origin/main
+Updating b0ebd32..29c2687
+Fast-forward
+ data/html/movie/arigatou_dig_group.html     |  28 [32m++++++++++++++++++++++++++++[m
+ data/html/movie/arigatou_dig_grouplogo.webm | Bin [31m0[m -> [32m29495809[m bytes
+ data/html/movie/movie.html                  |  14 [32m+++++++++++[m[31m---[m
+ data/html/movie/movie_03.html               |  14 [32m+++++++++++[m[31m---[m
+ data/html/movie/tmp/movie.html              |  26 [32m++++++++++++++++++++++++++[m
+ data/html/movie/tmp/movie_03.html           |  25 [32m+++++++++++++++++++++++++[m
+ 6 files changed, 101 insertions(+), 6 deletions(-)
+ create mode 100644 data/html/movie/arigatou_dig_group.html
+ create mode 100644 data/html/movie/arigatou_dig_grouplogo.webm
+ create mode 100644 data/html/movie/tmp/movie.html
+ create mode 100644 data/html/movie/tmp/movie_03.html
+]0;root@v133-18-235-232: ~/sites-csc.service.co.jproot@v133-18-235-232:~/sites-csc.service.co.jp# git pul.l[K[Kl
+remote: Enumerating objects: 15, done.[K
+remote: Counting objects:   6% (1/15)[Kremote: Counting objects:  13% (2/15)[Kremote: Counting objects:  20% (3/15)[Kremote: Counting objects:  26% (4/15)[Kremote: Counting objects:  33% (5/15)[Kremote: Counting objects:  40% (6/15)[Kremote: Counting objects:  46% (7/15)[Kremote: Counting objects:  53% (8/15)[Kremote: Counting objects:  60% (9/15)[Kremote: Counting objects:  66% (10/15)[Kremote: Counting objects:  73% (11/15)[Kremote: Counting objects:  80% (12/15)[Kremote: Counting objects:  86% (13/15)[Kremote: Counting objects:  93% (14/15)[Kremote: Counting objects: 100% (15/15)[Kremote: Counting objects: 100% (15/15), done.[K
+remote: Compressing objects: 100% (1/1)[Kremote: Compressing objects: 100% (1/1), done.[K
+remote: Total 8 (delta 6), reused 8 (delta 6), pack-reused 0[K
+Unpacking objects:  12% (1/8)Unpacking objects:  25% (2/8)Unpacking objects:  37% (3/8)Unpacking objects:  50% (4/8)Unpacking objects:  62% (5/8)Unpacking objects:  75% (6/8)Unpacking objects:  87% (7/8)Unpacking objects: 100% (8/8)Unpacking objects: 100% (8/8), 617 bytes | 205.00 KiB/s, done.
+From github.com:h008/sites-csc.service.co.jp
+   29c2687..9f6a6e9  main       -> origin/main
+Updating 29c2687..9f6a6e9
+Fast-forward
+ data/html/movie/arigatou_dig_group.html | 2 [32m+[m[31m-[m
+ data/html/movie/movie.html              | 2 [32m+[m[31m-[m
+ data/html/movie/movie_03.html           | 2 [32m+[m[31m-[m
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+]0;root@v133-18-235-232: ~/sites-csc.service.co.jproot@v133-18-235-232:~/sites-csc.service.co.jp# git pull
+remote: Enumerating objects: 15, done.[K
+remote: Counting objects:   6% (1/15)[Kremote: Counting objects:  13% (2/15)[Kremote: Counting objects:  20% (3/15)[Kremote: Counting objects:  26% (4/15)[Kremote: Counting objects:  33% (5/15)
